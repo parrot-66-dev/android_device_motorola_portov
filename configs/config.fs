@@ -49,6 +49,30 @@ value:2916
 [AID_VENDOR_THALES_AUTHSECRET]
 value:2917
 
+[AID_VENDOR_BRIDGE_RW]
+value:5001
+
+[AID_VENDOR_PWRIC]
+value:5101
+
+[AID_VENDOR_TCMD]
+value:5104
+
+[AID_VENDOR_DBVC]
+value:5114
+
+[AID_VENDOR_FINGERP]
+value:5115
+
+[AID_VENDOR_DTV]
+value:5119
+
+[AID_VENDOR_MOD]
+value:5120
+
+[AID_VENDOR_PROD_PERSIST]
+value:5121
+
 [vendor/bin/hw/android.hardware.security.keymint-service.strongbox-nxp]
 mode: 0755
 user: AID_VENDOR_NXP_STRONGBOX
