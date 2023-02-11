@@ -189,6 +189,13 @@ PRODUCT_SHIPPING_API_LEVEL := 35
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/motorola
+    
+# Vibrator
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.vibrator.service
+
+PRODUCT_COPY_FILES += \
+    vendor/qcom/opensource/vibrator/excluded-input-devices.xml:vendor/etc/excluded-input-devices.xml
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/motorola/mona/mona-vendor.mk)
