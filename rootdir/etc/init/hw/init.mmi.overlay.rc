@@ -5,9 +5,6 @@ on early-init
 
 on fs
 	insmod /vendor/lib/modules/msm_drm.ko
-	insmod /vendor/lib/modules/mmi_annotate.ko
-	insmod /vendor/lib/modules/mmi_info.ko
-	insmod /vendor/lib/modules/mmi_relay.ko
 	insmod /vendor/lib/modules/sensors_class.ko
 	insmod /vendor/lib/modules/touchscreen_mmi.ko
 	insmod /vendor/lib/modules/qti_glink_charger.ko
@@ -47,13 +44,10 @@ on early-boot
 
     # Add for after-sales ois gyro cal
     mkdir /mnt/vendor/persist/camera/gyro_compat 0770 vendor_tcmd camera
-    # Add for OIS hall test result
-    mkdir /mnt/vendor/persist/camera/ois_hall 0770 vendor_tcmd camera
 
 on boot
     # change permission of brightness
     chown system system /sys/class/backlight/aw99703-bl/brightness
-    chmod 0666 /sys/class/backlight/aw99703-bl/brightness
 
     #bluetooth sar
     write /data/vendor/radio/bluetooth_sar disable
@@ -87,10 +81,6 @@ on boot
     # change permission for goodix TP
     chmod 0664 /dev/gtp_tools
 
-    #change vibrator test node file access permission
-    chmod 0660 /sys/class/qcom-haptics/enable_play
-    chown vendor_tcmd system /sys/class/qcom-haptics/enable_play
-
 service vendor.capsense_reset /vendor/bin/capsense_reset
    class core
    user system
@@ -104,33 +94,6 @@ service vendor.mmi-cap-sh /vendor/bin/init.mmi.cap.sh
 
 on property:sys.boot_completed=1
     start vendor.capsense_reset
-    #change adsp pmic test command file access permission
-    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/tcmd
-    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl
-    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_usb_suspend
-    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/addr
-    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/data
-    chown system system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/fg_operation
-    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_wls_en
-    chown vendor_tcmd system /sys/class/power_supply/wireless/device/wlc_fac_vbus_voltage
-    chown vendor_tcmd system /sys/class/power_supply/wireless/device/wlc_fac_ibus_current
-    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/tcmd
-    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl
-    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_usb_suspend
-    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/addr
-    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/data
-    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/fg_operation
-    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_wls_en
-    chmod 0660  /sys/class/power_supply/wireless/device/wlc_fac_vbus_voltage
-    chmod 0660  /sys/class/power_supply/wireless/device/wlc_fac_ibus_current
-
-    #change flip battery charging test command file access permission
-    chown vendor_tcmd system /sys/class/power_supply/charger/device/chg_en
-    chown vendor_tcmd system /sys/class/power_supply/charger/device/charger_suspend
-    chown vendor_tcmd system /sys/class/power_supply/charger/device/high_load_en
-    chown vendor_tcmd system /sys/class/power_supply/charger/device/low_load_en
-    chown vendor_tcmd system /sys/class/power_supply/charger/input_current_limit
-    chown vendor_tcmd system /sys/class/power_supply/charger/constant_charge_current
 
     # copy gps license file to /mnt/vendor/persist/data/pfm/licenses
     copy /vendor/etc/motorola/qcom_gps_license.pfm /mnt/vendor/persist/data/pfm/licenses/qcom_gps_license.pfm
