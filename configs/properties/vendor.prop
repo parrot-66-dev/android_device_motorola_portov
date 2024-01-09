@@ -20,6 +20,6 @@ vendor.false_touch_quality=38
 
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
-persist.vendor.sensors.mot_tap=true
+persist.vendor.sensors.mot_tap=false
 ro.vendor.sensors.glance_approach=false
 ro.vendor.sensors.prox_for_call=false
