@@ -35,6 +35,8 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_lockPlanes')
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
+    'vendor/lib64/nfc_nci.nqx.default.hw.so': blob_fixup()
+        .replace_needed('libbase.so', 'libbase-v33.so'),
 }
 
 extract_fns: extract_fns_user_type = {
