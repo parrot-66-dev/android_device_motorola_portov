@@ -447,28 +447,6 @@
                 <graph_kv key="0xA3000000" value="0xA3000009"/>
             </keys_and_values>
         </device>
-        <device id="PAL_DEVICE_IN_MIC1">
-            <keys_and_values>
-                <!-- DEVICETX - speaker_MIC -->
-                <graph_kv key="0xA3000000" value="0xA3000001"/>
-                <!-- DEVICEPP_TX - DEVICEPP_TX_AUDIO_FLUENCE_EANS_MONO -->
-                <graph_kv key="0xAD000000" value="0xAD000019"/>
-            </keys_and_values>
-        </device>
-        <device id="PAL_DEVICE_IN_MIC2">
-            <keys_and_values>
-                <!-- DEVICETX - speaker_MIC -->
-                <graph_kv key="0xA3000000" value="0xA3000001"/>
-                <!-- DEVICEPP_TX - DEVICEPP_TX_AUDIO_FLUENCE_EANS_MONO -->
-                <graph_kv key="0xAD000000" value="0xAD000019"/>
-            </keys_and_values>
-        </device>
-        <device id="PAL_DEVICE_IN_MIC3">
-            <keys_and_values>
-                <!-- DEVICETX - handset_MIC -->
-                <graph_kv key="0xA3000000" value="0xa3000004"/>
-            </keys_and_values>
-        </device>
         <!-- Out hearing AID Device -->
         <device id="PAL_DEVICE_OUT_HEARING_AID">
             <keys_and_values>

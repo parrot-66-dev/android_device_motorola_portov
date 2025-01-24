@@ -261,20 +261,6 @@
             </ec_rx_device>
         </in-device>
         <in-device>
-            <id>PAL_DEVICE_IN_MIC1</id>
-            <back_end_name>CODEC_DMA-LPAIF_RXTX-TX-3</back_end_name>
-            <max_channels>1</max_channels>
-            <channels>1</channels>
-            <snd_device_name>mic1</snd_device_name>
-        </in-device>
-        <in-device>
-            <id>PAL_DEVICE_IN_MIC2</id>
-            <back_end_name>CODEC_DMA-LPAIF_RXTX-TX-3</back_end_name>
-            <max_channels>1</max_channels>
-            <channels>1</channels>
-            <snd_device_name>mic2</snd_device_name>
-        </in-device>
-        <in-device>
             <id>PAL_DEVICE_IN_HANDSET_VA_MIC</id>
             <back_end_name>CODEC_DMA-LPAIF_VA-TX-0</back_end_name>
             <max_channels>2</max_channels>
