@@ -309,3 +309,24 @@ on property:sys.usb.accessory_current_limit=1
 
 on property:sys.usb.accessory_current_limit=0
     write /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl 0
+
+service nqnfcinfo /vendor/bin/nqnfcinfo
+    class late_start
+    group nfc
+    user system
+    oneshot
+
+on property:vendor.qti.nfc.chipid=0xca
+    setprop persist.vendor.nfc.config_file_name libnfc-PN560.conf
+    start vendor.nfc_hal_service
+
+on property:vendor.qti.nfc.chipid=0xc1
+    setprop persist.vendor.nfc.config_file_name libnfc-SN220-UICC.conf
+    start vendor.nfc_hal_service
+
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.nxp
+    override
+    class early_hal
+    user nfc
+    group nfc drmrpc system
+    disabled

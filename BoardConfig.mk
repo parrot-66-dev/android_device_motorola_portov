@@ -29,6 +29,7 @@ BOARD_SUPER_PARTITION_SIZE := 12683575296
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/properties/product.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/properties/vendor.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/properties/system.prop
 
 # Recovery
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
