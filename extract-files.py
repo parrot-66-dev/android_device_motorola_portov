@@ -58,11 +58,11 @@ lib_fixups: lib_fixups_user_type = {
 
 
 blob_fixups: blob_fixups_user_type = {
+ 'vendor/lib64/sensors.moto.so': blob_fixup().add_needed('libbase_shim.so')
 }
 
 extract_fns: extract_fns_user_type = {
     star_firmware_regex: extract_star_firmware,
-}
 
 module = ExtractUtilsModule(
     'mona',
