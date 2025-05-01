@@ -51,6 +51,11 @@ PRODUCT_PACKAGES += \
     LineageSdkResDevice \
     LineageSystemUIResDevice \
     SystemUIResDevice
+    
+# Properties
+PRODUCT_PACKAGES += \
+    hardware.sku.XT2533-4.prop \
+    hardware.sku.XT2533-5.prop
 
 # NFC
 TARGET_USES_ST_NFC := true
