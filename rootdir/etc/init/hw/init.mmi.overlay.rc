@@ -1,8 +1,5 @@
 import /vendor/etc/init/hw/init.vendor.st21nfc.rc
 
-on early-init
-   exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -r -d /vendor/lib/modules zram
-
 on fs
 	insmod /vendor/lib/modules/msm_drm.ko
 	insmod /vendor/lib/modules/sensors_class.ko
