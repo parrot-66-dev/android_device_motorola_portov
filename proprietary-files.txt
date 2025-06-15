@@ -313,6 +313,9 @@ vendor/lib64/camera/com.qti.tuned.mot_mona_gc13a2.bin
 vendor/lib64/camera/com.qti.tuned.mot_mona_gc32e1.bin
 vendor/lib64/camera/com.qti.tuned.mot_mona_imx896.bin
 
+# CapSense
+vendor/bin/capsense_reset
+
 # Charger Firmware
 vendor/firmware/sc9624.bin
 
