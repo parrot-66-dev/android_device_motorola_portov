@@ -222,6 +222,31 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:vendor/etc/excluded-input-devices.xml
+    
+# WiFi
+PRODUCT_PACKAGES += \
+    android.hardware.wifi-service \
+    hostapd \
+    libwifi-hal-qcom \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
+# WiFi firmware symlinks
+$(foreach variant,$(TARGET_WIFI_VARIANTS), \
+    $(eval PRODUCT_PACKAGES += \
+        firmware_$(variant)_wlan_mac.bin_symlink \
+        firmware_$(variant)_WCNSS_qcom_cfg.ini_symlink) \
+)
+
+# WiFi config files
+$(foreach variant,$(TARGET_WIFI_VARIANTS), \
+    $(eval PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/configs/wifi/$(variant)/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/$(variant)/WCNSS_qcom_cfg.ini) \
+)
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/motorola/mona/mona-vendor.mk)
