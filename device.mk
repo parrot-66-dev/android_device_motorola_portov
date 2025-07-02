@@ -26,6 +26,10 @@ PRODUCT_COPY_FILES += \
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2712
 TARGET_SCREEN_WIDTH := 1220
+    
+# Fingerprint
+PRODUCT_PACKAGES += \
+    libshim_fp
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -33,6 +37,9 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-V4-ndk.vendor \
     android.hardware.biometrics.common.util.vendor \
     android.hardware.biometrics.common.thread.vendor
+    
+PRODUCT_PACKAGES +=\
+    libshim_fp
 
 # Init
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/hw/*.rc),\

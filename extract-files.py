@@ -20,6 +20,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
+    'device/motorola/mona',
     'device/motorola/sm7435-common',
     'vendor/motorola/sm7435-common',
     'hardware/motorola',
@@ -45,6 +46,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
     'vendor/etc/init/android.hardware.biometrics.fingerprint-service-rbs2.rc': blob_fixup()
         .regex_replace(r'\s+disabled\n', ''),
+    'vendor/lib64/com.motorola.hardware.biometric.fingerprint@1.1.so': blob_fixup()
+        .add_needed('libshim_fp.so'),
 }
 
 extract_fns: extract_fns_user_type = {
