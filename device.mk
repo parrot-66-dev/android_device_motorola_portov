@@ -258,9 +258,13 @@ PRODUCT_COPY_FILES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
-
+    
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:vendor/etc/excluded-input-devices.xml
+
+# VNDK
+PRODUCT_PACKAGES += \
+    vndservicemanager
     
 # WiFi
 PRODUCT_PACKAGES += \
