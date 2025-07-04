@@ -1,0 +1,25 @@
+# Audio
+vendor.audio.min.dr0=5.1
+vendor.audio.max.dr0=6.9
+vendor.audio.min.dr1=5.1
+vendor.audio.max.dr1=6.9
+vendor.audio.min.temp=20.0
+vendor.audio.max.temp=60.0
+
+# Camera
+persist.vendor.camera.physical.num=3
+
+# Display
+ro.vendor.display.sensortype=2
+ro.vendor.display.svi=1
+vendor.display.svi.config=1
+vendor.display.svi.config_path=/vendor/etc/display/SVIConfig.xml
+
+# Fingerprint
+vendor.false_touch_quality=38
+
+# Sensors
+persist.vendor.sensors.enable.mag_filter=true
+persist.vendor.sensors.mot_tap=true
+ro.vendor.sensors.glance_approach=false
+ro.vendor.sensors.prox_for_call=false
