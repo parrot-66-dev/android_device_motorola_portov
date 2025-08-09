@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest version="4.0" type="device">
+    <hal format="hidl" override="true">
+        <name>android.hardware.radio</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.2::ISap/slot1</fqname>
+        <fqname>@1.6::IRadio/slot1</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>android.hardware.secure_element</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.2::ISecureElement/SIM1</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.esepowermanager</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.data.connection</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.1::IDataConnection/slot1</fqname>
+    </hal>
+    <hal format="aidl" override="true">
+        <name>vendor.qti.hardware.data.connectionfactory</name>
+        <interface>
+            <name>IFactory</name>
+            <instance>slot0</instance>
+        </interface>
+        <fqname>IFactory/slot0</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.data.iwlan</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.1::IIWlan/slot1</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.qteeconnector</name>
+        <transport>hwbinder</transport>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.am</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IQcRilAudio/slot1</fqname>
+    </hal>
+    <hal format="aidl" override="true">
+        <name>vendor.qti.hardware.radio.ims</name>
+        <version>12</version>
+        <interface>
+            <name>IImsRadio</name>
+            <instance>imsradio0</instance>
+        </interface>
+        <fqname>IImsRadio/imsradio0</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.lpa</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.2::IUimLpa/UimLpa0</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.qcrilhook</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IQtiOemHook/oemhook0</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.qtiradio</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IQtiRadio/slot1</fqname>
+        <fqname>@2.6::IQtiRadio/slot1</fqname>
+    </hal>
+    <hal format="aidl" override="true">
+        <name>vendor.qti.hardware.radio.qtiradio</name>
+        <version>8</version>
+        <interface>
+            <name>IQtiRadioStable</name>
+            <instance>slot1</instance>
+        </interface>
+        <fqname>IQtiRadioStable/slot1</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.uim</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.2::IUim/Uim0</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.uim_remote_client</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IUimRemoteServiceClient/uimRemoteClient0</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.qti.hardware.radio.uim_remote_server</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IUimRemoteServiceServer/uimRemoteServer0</fqname>
+    </hal>
+</manifest>

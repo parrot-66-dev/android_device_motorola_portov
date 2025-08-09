@@ -38,6 +38,15 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 BOOT_SECURITY_PATCH := 2025-05-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
+# Vintf
+DEVICE_MANIFEST_PARROT_FILES += $(DEVICE_PATH)/configs/vintf/manifest_paros.xml
+
+ODM_MANIFEST_SKUS += n dn ne dne
+ODM_MANIFEST_N_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_n.xml
+ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_dn.xml
+ODM_MANIFEST_NE_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_ne.xml
+ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_dne.xml
+
 # Verified Boot
 BOARD_AVB_ROLLBACK_INDEX := 9
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 9
