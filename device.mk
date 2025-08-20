@@ -39,6 +39,7 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
 # Overlay
 PRODUCT_PACKAGES += \
     FrameworksResDevice \
+    LineagePlatformDevice \
     LineageSdkResDevice \
     LineageSystemUIResDevice \
     SystemUIResDevice
@@ -55,6 +56,10 @@ PRODUCT_SHIPPING_API_LEVEL := 35
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
+# StylusKeyHandler
+PRODUCT_PACKAGES += \
+    StylusKeyHandler
 
 # Wi-Fi
 TARGET_WIFI_VARIANTS := qca6750
