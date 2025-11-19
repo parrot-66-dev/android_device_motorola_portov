@@ -282,20 +282,11 @@ on init && property:ro.boot.chg_panic_enabled=false
 on init && property:ro.boot.chg_panic_enabled=true
     write /sys/module/sgm4154x_charger_lite/parameters/paired_vbat_panic_enabled 1
 
-# Enable debugfs for userdebug build
-on early-init && property:ro.build.type=userdebug
-    mount debugfs debugfs /sys/kernel/debug
-    chmod 0755 /sys/kernel/debug
-
 on property:vendor.bluetooth.sar_state=connect
     write /data/vendor/radio/bluetooth_sar connect
 
 on property:vendor.bluetooth.sar_state=disconnect
     write /data/vendor/radio/bluetooth_sar disconnect
-
-# Disable the host silent recovery
-on property:sys.boot_completed=1 && property:ro.build.type=userdebug
-    write /sys/class/remoteproc/remoteproc3/recovery disabled
 
 on property:sys.usb.accessory_current_limit=1
     write /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl 1000
