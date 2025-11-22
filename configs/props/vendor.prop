@@ -243,3 +243,7 @@ vendor.display.allow_tonemap_native=1
 vendor.display.disable_hw_recovery_dump=1
 vendor.display.enable_early_wakeup=1
 ro.vendor.hid_display=true
+
+# Gatekeeper
+vendor.gatekeeper.is_security_level_spu=0
+vendor.gatekeeper.disable_spu=true
