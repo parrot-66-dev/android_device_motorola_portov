@@ -120,7 +120,9 @@ TARGET_SCREEN_DENSITY := 450
 PRODUCT_SHIPPING_API_LEVEL := 35
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/motorola
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/motorola/mona/mona-vendor.mk)
