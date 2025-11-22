@@ -648,7 +648,6 @@ product/priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND/HotwordEnrollmentYGoog
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
-<<<<<<< HEAD
 # IO prefetcher
 vendor/lib64/vendor.qti.hardware.iop@1.0.so
 vendor/lib64/vendor.qti.hardware.iop@2.0.so
@@ -660,6 +659,10 @@ vendor/etc/init/ipacm-diag.rc
 # IRQ balance
 vendor/bin/msm_irqbalance
 vendor/etc/msm_irqbalance.conf
+
+# Keylayouts
+vendor/usr/keylayout/fts_ts.kl
+vendor/usr/keylayout/goodix_ts.kl
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
