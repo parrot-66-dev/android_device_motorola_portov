@@ -1,0 +1,39 @@
+
+# This file needs to be executed by vendor_init at boot of the device,
+# both in normal and factory mode.
+
+on early-boot
+	# Change ownership and permision of st nfc device
+	chown nfc nfc /dev/st21nfc
+	chmod 0660 /dev/st21nfc
+	chown secure_element secure_element /dev/st54spi
+	chmod 0660 /dev/st54spi
+
+on property:ro.vendor.hw.felica=true && property:ro.vendor.hw.nfc=ese_st
+   setprop persist.vendor.nfc.st_nfc_felica_ese 1
+   setprop persist.vendor.nfc.config_file_name "libnfc-nci-st-felica.conf"
+   copy /vendor/etc/sttesttool.json /data/nfc/sttesttool.json
+
+on property:ro.boot.revision=dvt1 && property:ro.boot.device=mona
+   setprop persist.vendor.nfc.config_hal_name "libnfc-hal-st-dvt1.conf"
+
+on property:ro.boot.revision=dvt1 && property:ro.boot.device=monai
+   setprop persist.vendor.nfc.config_hal_name "libnfc-hal-st-dvt1.conf"
+
+on property:ro.vendor.hw.nfc=true && property:persist.vendor.radio.multisim.config=*
+	start vendor.stflashtool
+
+on property:ro.vendor.hw.nfc=st && property:persist.vendor.radio.multisim.config=*
+	start vendor.stflashtool
+
+on property:ro.vendor.hw.nfc=ese_st && property:persist.vendor.radio.multisim.config=*
+	start vendor.stflashtool
+
+on property:ro.vendor.hw.nfc=esim_st && property:persist.vendor.radio.multisim.config=*
+	start vendor.stflashtool
+
+service vendor.stflashtool /vendor/bin/STFlashTool -c /vendor/etc/st21nfc_conf.txt -P vendor.nfc.fw_status
+	group nfc
+	user nfc
+	oneshot
+	disabled

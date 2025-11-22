@@ -1,0 +1,53 @@
+on init
+    setprop vendor.usb.adb_early ${ro.boot.adb_early:-"0"}
+
+on charger
+    setprop vendor.usb.charging.func.name fastboot
+
+# Wait for the USB init shell script to finish, to prevent enumeration issues
+on property:init.svc.vendor.mmi-usb-sh=stopped && property:ro.boot.mode=charger && property:vendor.usb.adb_early=0
+    setprop sys.usb.configfs 1
+    setprop sys.usb.config fastboot
+
+on property:init.svc.vendor.mmi-usb-sh=stopped && property:ro.boot.mode=charger && property:vendor.usb.adb_early=1
+    setprop sys.usb.configfs 1
+    setprop sys.usb.config adb
+
+on moto-charger
+    stop qseecom-service
+    stop hwservicemanager
+    stop vendor.sensors
+    trigger firmware_mounts_complete
+    wait /sys/class/power_supply/battery
+    wait /sys/class/power_supply/usb
+    write /sys/devices/platform/soc/soc:mmi,charger/state_sync 1
+    wait /sys/class/udc/${sys.usb.controller} 20
+    start vendor.charge_only_mode
+    start vendor.batt_health
+    start vendor.thermal-com
+    start system_suspend
+
+    # Enable only CPU core 0 to keep current drain to a minimum
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "walt"
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/devices/system/cpu/cpu4/online 0
+    write /sys/devices/system/cpu/cpu5/online 0
+    write /sys/devices/system/cpu/cpu6/online 0
+    write /sys/devices/system/cpu/cpu7/online 0
+
+    #Enable UFS clock scaling back
+    write /sys/bus/platform/devices/1d84000.ufshc/clkscale_enable 1
+    #Enable UFS auto_hibern8 back
+    write /sys/bus/platform/devices/1d84000.ufshc/auto_hibern8 5000
+    #Enable UFS clock gating back
+    write /sys/bus/platform/devices/1d84000.ufshc/clkgate_enable 1
+
+on firmware_mounts_complete && property:ro.boot.mode=charger && property:persist.vendor.qcomsysd.enabled=1
+    stop qcomsysd
+
+on moto-charger && property:ro.vendor.build.motfactory=1
+    wait /sys/class/power_supply/battery/device/factory_image_mode
+    write /sys/class/power_supply/battery/device/factory_image_mode 1
