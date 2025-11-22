@@ -247,3 +247,8 @@ ro.vendor.hid_display=true
 # Gatekeeper
 vendor.gatekeeper.is_security_level_spu=0
 vendor.gatekeeper.disable_spu=true
+
+# Keymaster
+ro.hardware.keystore_desede=true
+
+
