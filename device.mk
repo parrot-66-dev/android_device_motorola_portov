@@ -197,6 +197,10 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/motorola
     
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal-service.qti
+    
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
