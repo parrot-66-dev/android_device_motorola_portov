@@ -28,10 +28,18 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
     
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_engine_sideload \
+    update_verifier
+    
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 400dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
+
+# Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Screen
 TARGET_SCREEN_DENSITY := 450
