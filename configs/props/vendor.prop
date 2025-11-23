@@ -254,6 +254,11 @@ vendor.gatekeeper.disable_spu=true
 # Keymaster
 ro.hardware.keystore_desede=true
 
+# Media
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+media.c2.hal.selection=aidl
+debug.stagefright.c2inputsurface=-1
+
 # Radio
 persist.vendor.radio.sar_sensor=1
 persist.vendor.radio.fi_supported=0
