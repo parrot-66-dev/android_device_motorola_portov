@@ -56,11 +56,8 @@ vendor.audio.offload.passthrough=false
 ro.vendor.audio.sdk.ssr=false
 vendor.audio.offload.gapless.enabled=true
 vendor.audio.safx.pbe.enabled=false
-vendor.audio.parser.ip.buffer.size=262144
 vendor.audio.flac.sw.decoder.24bit=true
 vendor.audio.hal.boot.timeout.ms=20000
-vendor.audio.use.sw.alac.decoder=true
-vendor.audio.use.sw.ape.decoder=true
 vendor.audio.use.sw.mpegh.decoder=true
 vendor.audio.hw.aac.encoder=false
 audio.sys.noisy.broadcast.delay=600
@@ -132,8 +129,6 @@ persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aac-aptx-aptxhd-ldac
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 persist.vendor.qcom.bluetooth.a2dp_mcast_test.enabled=false
-persist.vendor.qcom.bluetooth.scram.enabled=false
-persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true
 persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
 ro.vendor.bluetooth.csip_qti=true
 ro.vendor.bluetooth.btconfigstore=false
@@ -153,6 +148,7 @@ ro.vendor.audio.camera_video_ainr.supported=true
 ro.soc.manufacturer=QTI
 
 # Display/surfaceflinger
+debug.sf.enable_hwc_vds=0
 debug.sf.signal_protected_for_blur=1
 persist.sys.sf.native_mode=1
 persist.sys.sf.color_mode=7
@@ -160,7 +156,6 @@ debug.sf.force_p3_to_srgb_oem=true
 debug.sf.force_populate_color_modes=true
 ro.surface_flinger.has_wide_color_display=false
 ro.sf.lcd_density=450
-debug.sf.enable_gl_backpressure=1
 debug.sf.log_expensive_rendering=true
 ro.surface_flinger.set_idle_timer_ms=100
 ro.surface_flinger.set_touch_timer_ms=1000
@@ -172,13 +167,6 @@ vendor.display.hwc_disable_hdr=1
 persist.sys.sf.force_brightness_capability=1
 vendor.display.vds_allow_hwc=1
 debug.sf.enable_hwc_vds=0
-debug.sf.late.app.duration=
-debug.sf.early.app.duration=
-debug.sf.earlyGl.app.duration=
-debug.sf.early.sf.duration=
-debug.sf.earlyGl.sf.duration=
-debug.sf.late.sf.duration=
-debug.sf.auto_latch_unsignaled=0
 debug.sf.enable_advanced_sf_phase_offset=0
 debug.sf.use_phase_offsets_as_durations=0
 debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
@@ -215,10 +203,8 @@ vendor.hw.sf.supportPolicyCorrection=1
 vendor.wv.oemcrypto.debug.enable_external_display_check=false
 drm.service.enabled=true
 persist.demo.hdmirotationlock=false
-persist.sys.sf.color_saturation=1.0
 debug.sf.hw=0
 debug.egl.hw=0
-debug.sf.latch_unsignaled=1
 debug.mdpcomp.logs=0
 vendor.gralloc.disable_ubwc=0
 vendor.gralloc.enable_logs=0
@@ -246,10 +232,22 @@ vendor.display.allow_tonemap_native=1
 vendor.display.disable_hw_recovery_dump=1
 vendor.display.enable_early_wakeup=1
 ro.vendor.hid_display=true
+ro.hardware.vulkan=adreno
+ro.hardware.egl=adreno
+ro.opengles.version=196610
+
+# DPM
+persist.vendor.dpm.feature=1
+
+# FUSE Passthrough
+persist.sys.fuse.passthrough.enable=true
 
 # Gatekeeper
 vendor.gatekeeper.is_security_level_spu=0
 vendor.gatekeeper.disable_spu=true
+
+# IMS
+persist.vendor.rcs.singlereg.feature=1
 
 # Keymaster
 ro.hardware.keystore_desede=true
@@ -259,7 +257,11 @@ media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 media.c2.hal.selection=aidl
 debug.stagefright.c2inputsurface=-1
 
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+
 # Radio
+persist.vendor.data.mode=concurrent
 persist.vendor.radio.sar_sensor=1
 persist.vendor.radio.fi_supported=0
 persist.vendor.radio.rat_on=combine
@@ -273,3 +275,37 @@ persist.vendor.radio.mot_efs_log=false
 persist.vendor.radio.aosp_usr_pref_sel=true
 persist.vendor.radio.flexmap_type=none
 persist.vendor.radio.enable_temp_dds=true
+telephony.lteOnCdmaDevice=1
+
+# RmNet
+persist.rmnet.data.enable=true
+persist.data.wda.enable=true
+persist.data.df.dl_mode=5
+persist.data.df.ul_mode=5
+persist.data.df.agg.dl_pkt=10
+persist.data.df.agg.dl_size=4096
+persist.data.df.mux_count=8
+persist.data.df.iwlan_mux=9
+persist.data.df.dev_name=rmnet_usb0
+
+# Sensors
+persist.vendor.sensors.enable.mag_filter=true
+ro.vendor.sensors.mot_ltv=true
+ro.vendor.sensors.glance_approach=false
+persist.vendor.sensors.mot_tap=true
+ro.vendor.sensors.mot_backlight=true
+ro.vendor.hid_display=true
+ro.vendor.sensors.prox_for_call=false
+ro.vendor.sensors.front_light_compensate=true
+
+# USB
+vendor.usb.rndis.func.name=gsi
+vendor.usb.rmnet.func.name=gsi
+vendor.usb.rmnet.inst.name=rmnet
+vendor.usb.dpl.inst.name=dpl
+vendor.usb.controller=a600000.dwc3
+vendor.usb.qdss.inst.name=qdss_sw
+vendor.usb.diag.func.name=ffs
+vendor.usb.use_ffs_mtp=1
+sys.usb.mtp.batchcancel=1
+vendor.usb.use_gadget_hal=1
