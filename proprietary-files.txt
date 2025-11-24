@@ -51,8 +51,12 @@ vendor/etc/models/acd/speech.eai
 vendor/bin/hw/android.hardware.bluetooth@aidl-service-qti
 vendor/etc/init/android.hardware.bluetooth@aidl-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
+vendor/lib64/hw/mbedtls_qti.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libsoc_helper.so
+vendor/lib64/hw/android.hardware.bluetooth@aidl-impl-qti.so
+vendor/lib64/hw/vendor.qti.hardware.bttpi-impl.so
 
 # Bluetooth (A2DP)
 system_ext/lib64/vendor.qti.hardware.btconfigstore@1.0.so
@@ -63,6 +67,7 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@aidl-impl.so
 vendor/lib64/btaudio_offload_if.so
 vendor/lib64/libbluetooth_audio_session_qti.so
+vendor/lib64/libbluetooth_audio_session_aidl_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar-V1-ndk.so
 
@@ -108,7 +113,6 @@ vendor/lib64/libarcsoft_qnnhtp.so
 vendor/lib64/libbitmlengine.so
 vendor/lib64/libbitmlenginev2.so
 vendor/lib64/libcalculator.so
-vendor/lib64/libcamera2ndk_vendor.so
 vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamerapostproc.so
 vendor/lib64/libchilog.so
@@ -152,8 +156,8 @@ vendor/lib64/libubifocus.so
 vendor/lib64/libundistort_impl.so
 vendor/lib64/libvideoml.so
 vendor/lib64/libvidhance.so
-vendor/lib64/vendor.qti.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+vendor/lib64/com.motorola.hardware.camera.postprocess-V1-ndk.so
 
 # Camera (ICP)
 vendor/firmware/CAMERA_ICP.elf
@@ -339,6 +343,14 @@ vendor/lib64/libcdsprpc.so
 vendor/lib64/libmdsprpc.so
 
 # CNE
+system_ext/lib64/com.quicinc.cne.api@1.0.so
+system_ext/lib64/com.quicinc.cne.api@1.1.so
+system_ext/lib64/com.quicinc.cne.constants@1.0.so
+system_ext/lib64/com.quicinc.cne.constants@2.0.so
+system_ext/lib64/com.quicinc.cne.constants@2.1.so
+system_ext/lib64/com.quicinc.cne.server@2.0.so
+system_ext/lib64/com.quicinc.cne.server@2.1.so
+system_ext/lib64/com.quicinc.cne.server@2.2.so
 system_ext/lib64/vendor.qti.data.factory@1.0.so
 system_ext/lib64/vendor.qti.data.factory@2.0.so
 system_ext/lib64/vendor.qti.data.factory@2.1.so
@@ -349,6 +361,9 @@ system_ext/lib64/vendor.qti.data.factory@2.5.so
 system_ext/lib64/vendor.qti.data.factory@2.6.so
 system_ext/lib64/vendor.qti.data.factory@2.7.so
 system_ext/lib64/vendor.qti.data.factory@2.8.so
+system_ext/lib64/vendor.qti.latency@2.2.so
+system_ext/lib64/vendor.qti.latency@2.3.so
+system_ext/lib64/vendor.qti.hardware.data.flow@1.1.so
 system_ext/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
 system_ext/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
 system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so
@@ -403,6 +418,17 @@ vendor/lib64/libshsc.so
 vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
+vendor/lib64/vendor.qti.data.factoryservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.lceaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.flowaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.cneaidlservice.internal.api-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.cneaidlservice.internal.server-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.cneaidlservice.internal.constants-V1-ndk.so
+vendor/lib64/vendor.qti.latencyaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.data.mwqemaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.mwqemadapteraidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.dynamicddsaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.qmiaidlservice-V1-ndk.so
 vendor/lib64/vendor.qti.data.mwqem@1.0.so
 vendor/lib64/vendor.qti.data.slm@1.0.so
 vendor/lib64/vendor.qti.hardware.data.connection@1.0.so
@@ -418,6 +444,7 @@ vendor/lib64/vendor.qti.latency@2.1.so
 # Configstore
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore-service
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore-service.rc
+vendor/lib64/vendor.qti.hardware.capabilityconfigstore-V1-ndk.so
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore-impl.so
 
 # Diag
@@ -461,6 +488,8 @@ vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-colormgr-algo.so
 vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
+vendor/lib64/libvmfilexfer.so
+vendor/lib64/libintervmipc.so
 vendor/lib64/libtestutils.so
 vendor/lib64/libtinyxml2_1.so
 
@@ -517,6 +546,7 @@ vendor/lib64/vendor.libdpmfdmgr.so
 vendor/lib64/vendor.libdpmframework.so
 vendor/lib64/vendor.libdpmtcm.so
 vendor/lib64/vendor.libmwqemiptablemgr.so
+vendor/lib64/vendor.qti.hardware.dpmaidlservice-V1-ndk.so
 
 # DRM
 vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
@@ -533,6 +563,7 @@ vendor/lib64/libdrmtime.so
 vendor/lib64/libops.so
 vendor/lib64/libqisl.so
 vendor/lib64/librpmb.so
+vendor/lib64/libseclog.so
 vendor/lib64/libssd.so
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
@@ -552,19 +583,25 @@ system_ext/lib64/vendor.qti.hardware.embmssl@1.1.so
 vendor/bin/embmsslServer
 vendor/etc/init/init.embmssl_server.rc
 vendor/lib64/libembmsservice.so
+vendor/lib64/vendor.qti.hardware.embmsslaidl-V2-ndk.so
 
 # Fingerprint (goodix)
 vendor/lib64/hw/fingerprint.goodix.default.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
+vendor/lib64/com.motorola.hardware.biometric.fingerprint-V2-ndk.so
+vendor/lib64/com.motorola.hardware.biometric.fingerprint@1.1.so
+vendor/lib64/com.motorola.hardware.display.panel-V1-ndk.so
 
 # FM
 vendor/lib64/hw/vendor.qti.hardware.fm-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
+vendor/lib64/vendor.qti.hardware.fm-V1-ndk.so
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper-service-qti
 vendor/etc/init/android.hardware.gatekeeper-service-qti.rc
+vendor/lib64/hw/libqtigatekeeper.so
 
 # GNSS
 vendor/app/CACertService/CACertService.apk
@@ -584,18 +621,22 @@ vendor/lib64/libdataitems.so
 vendor/lib64/libengineplugin.so
 vendor/lib64/libgdtap.so
 vendor/lib64/libgnsspps.so
+vendor/lib64/libgps.utils.so
 vendor/lib64/libizat_client_api.so
 vendor/lib64/libizat_core.so
+vendor/lib64/libwifiobserver.so
 vendor/lib64/libjnihelper.so
 vendor/lib64/liblbs_core.so
 vendor/lib64/libloc_api_v02.so
 vendor/lib64/libloc_api_wds.so
 vendor/lib64/libloc_base_util.so
+vendor/lib64/libloc_core.so
 vendor/lib64/libloc_eng_hub.so
 vendor/lib64/libloc_mq_client.so
 vendor/lib64/libloc_qwes_iface.so
 vendor/lib64/libloc_socket.so
 vendor/lib64/libloc_util.so
+vendor/lib64/liblocation_api.so
 vendor/lib64/liblocationservice.so
 vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblocdiagiface.so
@@ -779,6 +820,9 @@ vendor/bin/motobox;SYMLINK=vendor/bin/expat
 vendor/etc/vhw.xml
 
 # Perf
+vendor/lib64/vendor.qti.snapdragonServices.qape-V1-ndk.so
+vendor/lib64/libqti-s3tf.so
+vendor/lib64/vendor.qti.snapdragonServices-V1-ndk.so
 vendor/bin/hw/vendor.qti.hardware.perf2-hal-service
 vendor/bin/poweropt-service
 vendor/etc/init/poweropt-service.rc
@@ -805,16 +849,21 @@ vendor/lib64/libperfconfig.so
 vendor/lib64/libperfioctl.so
 vendor/lib64/libpowercore.so
 vendor/lib64/libpsmoptfeature.so
+vendor/lib64/libq-perflog.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
+vendor/lib64/vendor.qti.memory.pasrmanager-V1-ndk.so
+vendor/lib64/libqti-perfextn-intf.so
 vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
 vendor/lib64/libskewknob.so
 vendor/lib64/libstandbyfeature.so
 vendor/lib64/libvideooptfeature.so
+vendor/lib64/vendor.qti.hardware.perf2-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.power.powermodule-V1-ndk.so
 vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
 vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
+vendor/lib64/libqti-scenariod.so
 
 # Perf LM
 vendor/etc/lm/AppClassifierFeature.xml
@@ -853,6 +902,7 @@ system_ext/lib64/vendor.qti.hardware.alarm@1.0.so
 vendor/bin/hw/vendor.qti.hardware.alarm-service
 vendor/bin/power_off_alarm
 vendor/etc/init/vendor.qti.hardware.alarm-service.rc
+vendor/lib64/vendor.qti.hardware.alarm-V1-ndk.so
 vendor/lib64/hw/vendor.qti.hardware.alarm-impl.so
 
 # Public libraries
@@ -872,6 +922,7 @@ vendor/lib64/libqcc_file_agent.so
 vendor/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so
 vendor/lib64/vendor.qti.qccvndhal_aidl-halimpl.so
+vendor/lib64/libqcc_sdk.so
 
 # QESDK
 vendor/bin/qesdk-manager
@@ -882,12 +933,18 @@ vendor/etc/init/vendor.sensors.qesdk.rc
 vendor/etc/seccomp_policy/qesdk.policy
 vendor/etc/seccomp_policy/qsap_qapeservice.policy
 vendor/etc/seccomp_policy/sensors-qesdk.policy
+vendor/lib64/libqesdk2_0.so
 vendor/lib64/libqesdk_manager.so
 vendor/lib64/vendor.qti.qesdhal@1.0.so
 vendor/lib64/vendor.qti.qesdhal@1.1.so
+vendor/lib64/vendor.qti.qesdhal@1.2.so
+vendor/lib64/vendor.qti.qesdhal@1.3.so
 vendor/lib64/vendor.qti.qesdhal-impl.so
+vendor/lib64/vendor.qti.qesdhalaidl-V2-ndk.so
 vendor/lib64/vendor.qti.qesdsys-V3-ndk.so
 vendor/lib64/vendor.qti.qesdsys-V4-ndk.so
+vendor/lib64/libqesdoem_query_sys.so
+vendor/lib64/libqti-qesdk-secure.so
 
 # QMI
 system/etc/permissions/privapp-permissions-qti.xml
@@ -901,6 +958,9 @@ vendor/etc/seccomp_policy/qti-systemd.policy
 vendor/etc/sec_config
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
+vendor/lib64/libnicm.so
+vendor/lib64/libnicm_dsi.so
+vendor/lib64/libnicm_utils.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
 vendor/lib64/libqcmaputils.so
@@ -926,6 +986,8 @@ system_ext/lib64/vendor.qti.qspmhal-V1-ndk.so
 vendor/bin/vendor.qti.qspmhal-service
 vendor/etc/init/vendor.qti.qspmhal-service.rc
 vendor/etc/seccomp_policy/qspm.policy
+vendor/lib64/libqspm-mem-utils-vendor.so
+vendor/lib64/vendor.qti.hardware.qseecom-V1-ndk.so
 vendor/lib64/vendor.qti.qspmhal-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.qspmhal-impl.so
 
@@ -963,6 +1025,7 @@ vendor/bin/pd-mapper
 vendor/bin/port-bridge
 vendor/bin/qmi_motext_hook
 vendor/bin/qms
+vendor/lib64/vendor.qti.hardware.bttpi-V3-ndk.so
 vendor/bin/qrtr-cfg
 vendor/bin/qrtr-lookup
 vendor/bin/qrtr-ns
@@ -1019,8 +1082,32 @@ vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
 vendor/lib64/libqcbor.so
 vendor/lib64/libqcrilDataModule.so
+vendor/lib64/vendor.qti.hardware.data.iwlandata-V2-ndk.so
+vendor/lib64/vendor.qti.hardware.data.connectionaidl-V1-ndk.so
 vendor/lib64/libqcrilNr.so
+vendor/lib64/vendor.qti.hardware.radio.am-V1-ndk.so
 vendor/lib64/libqcrilNrCellInfoModule.so
+vendor/lib64/vendor.qti.hardware.radio.qcrilhook-V1-ndk.so
+vendor/lib64/qcrilNr_aidl_common.so
+vendor/lib64/qcrilNr_aidl_IRadioConfig.so
+vendor/lib64/qcrilNr_aidl_IRadioMessaging.so
+vendor/lib64/qcrilNr_aidl_IRadioModem.so
+vendor/lib64/qcrilNr_aidl_IRadioNetwork.so
+vendor/lib64/qcrilNr_aidl_IRadioSim.so
+vendor/lib64/qcrilNr_aidl_IRadioVoice.so
+vendor/lib64/qcrilNr_aidl_UimRemoteServer.so
+vendor/lib64/qcrilNr_aidl_UimRemoteClient.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_server-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.uim-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.lpa-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_client-V1-ndk.so
+vendor/lib64/libATFWD.so
+vendor/lib64/vendor.qti.hardware.radio.atfwd-V1-ndk.so
+vendor/lib64/qcrilNr_aidl_UimLpaService.so
+vendor/lib64/qcrilNr_aidl_UimService.so
+vendor/lib64/qcrilNr_aidl_IRadioSap.so
+vendor/lib64/qcrilNr_aidl_SecureElementService.so
+vendor/lib64/qcrilNrSecureMode.so
 vendor/lib64/libqcrilNrFramework.so
 vendor/lib64/libqcrilNrImsModule.so
 vendor/lib64/libqcrilNrLogger.so
@@ -1045,7 +1132,9 @@ vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/librilqmimiscservices.so
 vendor/lib64/libsystem_health_mon2.so
 vendor/lib64/qcril_client.so
+vendor/lib64/libQtiSocket.so
 vendor/lib64/qcrilInterfaces.so
+vendor/lib64/qcrilIntermodulemsgs.so
 vendor/lib64/qcrilMarshal.so
 vendor/lib64/qcrilNrQmiModule.so
 vendor/lib64/qcrilNr_aidl_IQtiRadioConfig.so
@@ -1056,6 +1145,7 @@ vendor/lib64/qtiril-utils.so
 vendor/lib64/qtiwakelock.so
 vendor/lib64/vendor.qti.hardware.data.ka-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.common-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.lpa@1.1.so
@@ -1078,6 +1168,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
+vendor/lib64/vendor.qti.syshealthmon-V1-ndk.so
 
 # RIL - IMS (Motorola)
 system/etc/permissions/moto-telephony.xml:system_ext/etc/permissions/moto-telephony.xml
@@ -1146,9 +1237,13 @@ vendor/lib64/com.qualcomm.qti.uceservice@2.1.so
 vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
 vendor/lib64/com.qualcomm.qti.uceservice@2.3.so
 vendor/lib64/lib-imscommon.so
+vendor/lib64/vendor.qti.ims.factoryaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.connectionaidlservice-V1-ndk.so
 vendor/lib64/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
 vendor/lib64/lib-imsrcsservice.so
+vendor/lib64/vendor.qti.ims.uceaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.imscmaidlservice-V1-ndk.so
 vendor/lib64/lib-imsservice.so
 vendor/lib64/lib-imsvtcore.so
 vendor/lib64/lib-imsxml.so
@@ -1170,6 +1265,10 @@ vendor/lib64/vendor.qti.ims.callcapability@1.0.so
 vendor/lib64/vendor.qti.ims.callinfo@1.0.so
 vendor/lib64/vendor.qti.ImsRtpService-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.ImsRtpService-aidl-Impl.so
+vendor/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.callcapabilityaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.configaidlservice-V1-ndk.so
 
 # Sensors
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate-service
@@ -1293,6 +1392,7 @@ vendor/lib64/libGPQTEEC_vendor.so
 vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
+vendor/lib64/vendor.qti.hardware.qteeconnector-V1-ndk.so
 
 # Venus firmware
 vendor/firmware/venus_4mb.mbn
@@ -1320,8 +1420,6 @@ vendor/lib64/vendor.qti.hardware.vpp@2.0.so
 
 # Widevine DRM
 vendor/bin/hw/android.hardware.drm-service.clearkey
-vendor/etc/init/android.hardware.drm-service.clearkey.rc
-vendor/etc/vintf/manifest/android.hardware.drm-service.clearkey.xml
 vendor/etc/qcom_widevine_licenses.pfm
 vendor/lib64/libtrustedapploader.so
 
