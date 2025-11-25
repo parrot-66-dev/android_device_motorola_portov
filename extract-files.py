@@ -51,12 +51,10 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}'
 
 libs_add_vendor_suffix = (
-    'vendor.qti.hardware.qccsyshal@1.0',
-    'vendor.qti.hardware.qccsyshal@1.1',
-    'vendor.qti.qspmhal@1.0',
-    'vendor.qti.imsrtpservice@3.0',
+    'vendor.qti.ImsRtpService-V1-ndk',
     'vendor.qti.diaghal@1.0',
     'com.qualcomm.qti.dpm.api@1.0',
+    'vendor.qti.qspmhal-V1-ndk'
 )
 
 lib_fixups: lib_fixups_user_type = {
@@ -78,7 +76,16 @@ blob_fixups: blob_fixups_user_type = {
     (
         'vendor/lib64/libqcodec2_core.so'
     ): blob_fixup()
-        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V6-ndk.so'),
+        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V6-ndk.so'),   
+        'vendor/lib64/libBSTSWAD.so': blob_fixup()
+        .clear_symbol_version('AHardwareBuffer_allocate')
+        .clear_symbol_version('AHardwareBuffer_createFromHandle')
+        .clear_symbol_version('AHardwareBuffer_describe')
+        .clear_symbol_version('AHardwareBuffer_getNativeHandle')
+        .clear_symbol_version('AHardwareBuffer_lock')
+        .clear_symbol_version('AHardwareBuffer_lockPlanes')
+        .clear_symbol_version('AHardwareBuffer_release')
+        .clear_symbol_version('AHardwareBuffer_unlock')
 }
 
 extract_fns: extract_fns_user_type = {
