@@ -113,7 +113,7 @@ vendor/lib64/libanc_hdr_adapter_rear_uw.so
 vendor/lib64/libarcsoft_qnnhtp.so
 vendor/lib64/libbitmlengine.so
 vendor/lib64/libbitmlenginev2.so
-vendor/lib64/libcalculator.so
+vendor/lib64/libcalculator.so;FIX_SONAME
 vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamerapostproc.so
 vendor/lib64/libchilog.so
