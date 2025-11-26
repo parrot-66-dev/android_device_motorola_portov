@@ -17,6 +17,7 @@ vendor/bin/adsprpcd
 vendor/bin/loadalgo
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
 vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
 vendor/lib64/libloadalgo_stub.so
 
 # ADSP modules
@@ -30,15 +31,47 @@ vendor/lib/rfsa/adsp/libdsp_streamer_binning.so
 # Audio firmware
 vendor/firmware/aw882xx_acf.bin
 
-# Audio libraries
+# Audio
+vendor/etc/models/acd/event.eai
+vendor/etc/models/acd/music.eai
+vendor/etc/models/acd/speech.eai
+vendor/lib64/hw/libaudiocorehal.default.so;DISABLE_DEPS;REQUIRED=manifest_audiocorehal_default.xml
+vendor/lib64/hw/libaudiocorehal.qti.so;DISABLE_DEPS
+vendor/lib64/hw/libaudioeffecthal.qti.so;DISABLE_DEPS;REQUIRED=audioeffectservice_qti.xml
 vendor/lib64/libadm.so
-vendor/lib64/libadsprpc.so
-vendor/lib64/libaualgo_foundation.so
+vendor/lib64/libar-pal.so;DISABLE_CHECKELF
 vendor/lib64/libaudio_log_utils.so
-vendor/lib64/libdapparamstorage.so
-vendor/lib64/libmcs.so
+vendor/lib64/libaudioplatformconverter.qti.so;DISABLE_DEPS
+vendor/lib64/libcapiv2svacnnvendor.so
+vendor/lib64/libcapiv2svarnnvendor.so
+vendor/lib64/libcapiv2uvvendor.so
+vendor/lib64/libdsd2pcm.so
+vendor/lib64/libeai_fixed.so
+vendor/lib64/libeai_float.so
+vendor/lib64/liblistensoundmodel2vendor.so
+vendor/lib64/liblistensoundmodelaidl.so
+vendor/lib64/libmcs.so;DISABLE_CHECKELF
 vendor/lib64/libpal_net_if.so
-vendor/lib64/libqtigefar.so
+vendor/lib64/libqtigefar.so;DISABLE_DEPS
+vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
+
+# Audio - old AIDL dependencies
+vendor/lib64/android.hardware.bluetooth.audio-impl.so:vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so;FIX_SONAME
+vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so;FIX_SONAME
+vendor/lib64/libaudioserviceexampleimpl.so;DISABLE_DEPS
+vendor/lib64/libbluetooth_audio_session_aidl.so:vendor/lib64/libbluetooth_audio_session_aidl_prebuilt.so;FIX_SONAME
+
+# Audio FX modules
+vendor/lib64/soundfx/libbundleaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libdownmixaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libdynamicsprocessingaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libloudnessenhanceraidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libqcompostprocbundle.so;DISABLE_DEPS
+vendor/lib64/soundfx/libqcomvisualizer.so;DISABLE_DEPS
+vendor/lib64/soundfx/libqcomvoiceprocessing.so;DISABLE_DEPS
+vendor/lib64/soundfx/libreverbaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libvisualizeraidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libvolumelistener.so;DISABLE_DEPS
 
 # Audio Misc
 vendor/etc/ap_gain.bin
@@ -50,7 +83,6 @@ vendor/etc/models/acd/speech.eai
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@aidl-service-qti
 vendor/etc/init/android.hardware.bluetooth@aidl-service-qti.rc
-vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@aidl-impl-qti.so
 vendor/lib64/hw/mbedtls_qti.so
@@ -63,6 +95,8 @@ system_ext/lib64/vendor.qti.hardware.btconfigstore@1.0.so
 system_ext/lib64/vendor.qti.hardware.btconfigstore@2.0.so
 vendor/lib64/btaudio_offload_if.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
+vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
+vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so;DISABLE_CHECKELF
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@aidl-impl.so
@@ -735,7 +769,6 @@ vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
 vendor/lib64/libEvrcSwCodec.so
 vendor/lib64/libQcelp13SwCodec.so
-vendor/lib64/libdsd2pcm.so
 vendor/lib64/libmmosal_vendor.so
 vendor/lib64/libqc2audio_base.so
 vendor/lib64/libqc2audio_basecodec.so
