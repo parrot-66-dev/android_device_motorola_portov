@@ -1,0 +1,14 @@
+<!--
+    Input:
+        device/moto/mona/vintf/manifest_dn.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl" override="true">
+        <name>android.hardware.secure_element</name>
+        <fqname>ISecureElement/SIM1</fqname>
+        <fqname>ISecureElement/SIM2</fqname>
+    </hal>
+    <hal format="aidl" override="true">
+        <name>vendor.nxp.nxpnfc_aidl</name>
+    </hal>
+</manifest>
