@@ -57,12 +57,9 @@ PRODUCT_PACKAGES += \
     libagmipcservice \
     libaudiochargerlistener \
     libbatterylistener \
-    libcustomva_intf \
     libfmpal \
     libhfp_pal \
-    libhotword_intf \
     libmediautils_vendor.vendor \
-    libpaleventnotifier \
     libpalipcservice \
     libqcompostprocbundle \
     libqcomvisualizer \
