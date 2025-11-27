@@ -153,6 +153,10 @@ ENABLE_VENDOR_RIL_SERVICE := true
 BOOT_SECURITY_PATCH := 2025-09-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
+# SELinux
+include device/qcom/sepolicy_vndr/SEPolicy.mk
+include hardware/motorola/sepolicy/qti/SEPolicy.mk
+
 # SKU
 ODM_MANIFEST_SKUS += dn n
 ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/vintf/manifest_dn.xml
