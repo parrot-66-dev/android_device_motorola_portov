@@ -217,6 +217,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
     
+# Moto
+PRODUCT_PACKAGES += \
+    MotoActions \
+    MotoCommonOverlay \
+    StylusKeyHandler
+    
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
