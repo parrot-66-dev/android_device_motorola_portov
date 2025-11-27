@@ -537,6 +537,34 @@ vendor/etc/display/qdcm_calib_data_nt37801_amoled_cmd_mode_dsi_csot_panel_with_D
 vendor/etc/display/qdcm_calib_data_nt37801_amoled_video_mode_dsi_csot_panel_with_DSC.json
 vendor/etc/display/qdcm_calib_data_nt37801_amoled_video_mode_dsi_csot_panel_with_DSC_CPHY.json
 
+# Display - OSS
+vendor/bin/hw/vendor.qti.hardware.display.allocator-service
+vendor/bin/hw/vendor.qti.hardware.display.composer-service;DISABLE_DEPS
+vendor/bin/hw/vendor.qti.hardware.display.demura-service
+vendor/bin/init.qti.display_boot.sh
+vendor/etc/init/init.qti.display_boot.rc
+vendor/etc/init/vendor.qti.hardware.display.allocator-service.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml
+vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so
+vendor/lib64/hw/mapper.qti.so
+vendor/lib64/libdisplayconfig.qti.so
+vendor/lib64/libdisplaydebug.so
+vendor/lib64/libdrmutils.so
+vendor/lib64/libfilefinder.so
+vendor/lib64/libgpu_tonemapper.so
+vendor/lib64/libgralloc.qti.so
+vendor/lib64/libgralloccore.so
+vendor/lib64/libgrallocutils.so
+vendor/lib64/libhistogram.so
+vendor/lib64/libmapperutils.so
+vendor/lib64/libqdMetaData.so
+vendor/lib64/libqdutils.so
+vendor/lib64/libqservice.so
+vendor/lib64/libsdedrm.so
+vendor/lib64/libsdmcore.so
+vendor/lib64/libsdmdal.so
+vendor/lib64/libsdmutils.so
+
 # Display postprocessing
 system_ext/lib64/vendor.display.color@1.0.so
 system_ext/lib64/vendor.display.color@1.1.so
