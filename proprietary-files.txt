@@ -1,6 +1,6 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from moto g stylus 5g 2025 (15 V2VA35.29-133).
-## variant: RETAIL
+## are from motorola edge 60 stylus (15 V2VB35V.29-127-ST2.10).
+## variant: RETIN
 
 # ACDB Data
 vendor/etc/acdbdata/nn_ns_models/fai__2.6.3_0.0__3.0.0_0.0__eai_1.10_enpu1.pmd
@@ -420,6 +420,7 @@ vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile7.xml
+vendor/etc/cne/wqeclient/ROW/ROW_dynamic.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile15.xml
 vendor/etc/cne/wqeclient/ROW/ROW_profile16.xml
@@ -1399,9 +1400,10 @@ vendor/etc/sensors/config/sns_tilt_sw_disabled.json
 vendor/etc/sensors/config/sns_tilt_sw_enabled.json
 vendor/etc/sensors/config/sns_tilt_to_wake.json
 vendor/etc/sensors/config/stk3b6x_0.json
-vendor/etc/sensors/config/stk3b6x_0_dvt2.json
+vendor/etc/sensors/config/stk3b6x_0_dvt1b.json
 vendor/etc/sensors/config/stk3bfx_0.json
 vendor/etc/sensors/config/stk3bfx_0_dvt1.json
+vendor/etc/sensors/config/stk3bfx_0_dvt2.json
 vendor/etc/sensors/config/waipio_default_sensors.json
 vendor/etc/sensors/config/waipio_dynamic_sensors.json
 vendor/etc/sensors/config/waipio_irq.json
@@ -1430,10 +1432,10 @@ vendor/lib64/hw/vendor.qti.hardware.soter-impl.so
 vendor/lib64/vendor.qti.hardware.soter-V1-ndk.so
 
 # Thermal configs
-vendor/etc/thermal-engine-mona-camera.conf
-vendor/etc/thermal-engine-mona-game-perf.conf
-vendor/etc/thermal-engine-mona-teams.conf
-vendor/etc/thermal-engine-mona.conf
+vendor/etc/thermal-engine-monai-camera.conf
+vendor/etc/thermal-engine-monai-game-perf.conf
+vendor/etc/thermal-engine-monai-teams.conf
+vendor/etc/thermal-engine-monai.conf
 vendor/etc/thermal-engine.conf
 
 # SSR

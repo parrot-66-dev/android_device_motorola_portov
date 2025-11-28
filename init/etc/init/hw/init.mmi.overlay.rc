@@ -181,7 +181,6 @@ on property:sys.boot_completed=1
     chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_usb_suspend
     chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/addr
     chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/data
-    chown system system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/fg_operation
     chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_wls_en
     chown vendor_tcmd system /sys/class/power_supply/wireless/device/wlc_fac_vbus_voltage
     chown vendor_tcmd system /sys/class/power_supply/wireless/device/wlc_fac_ibus_current
@@ -190,7 +189,6 @@ on property:sys.boot_completed=1
     chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_usb_suspend
     chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/addr
     chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/data
-    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/fg_operation
     chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_wls_en
     chmod 0660  /sys/class/power_supply/wireless/device/wlc_fac_vbus_voltage
     chmod 0660  /sys/class/power_supply/wireless/device/wlc_fac_ibus_current
@@ -253,9 +251,6 @@ on property:vendor.wifi.station=true
 
 on property:vendor.wifi.station=false
     write /sys/module/qca_cld3_qca6750/parameters/sar_sta disabled
-
-on property:ro.carrier=tmo
-    setprop persist.vendor.audio.use_case.extend tmo
 
 service vendor.netconfig /vendor/bin/vendor_netconfig
     class main

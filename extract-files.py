@@ -115,7 +115,7 @@ extract_fns: extract_fns_user_type = {
 }
 
 module = ExtractUtilsModule(
-    'mona',
+    'monai',
     'motorola',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,

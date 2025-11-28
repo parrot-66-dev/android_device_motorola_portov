@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/motorola/mona
+DEVICE_PATH := device/motorola/monai
 
 # A/B
 AB_OTA_UPDATER := true
@@ -44,7 +44,7 @@ TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := kryo385
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := mona
+TARGET_BOOTLOADER_BOARD_NAME := monai
 TARGET_NO_BOOTLOADER := true
 
 # Broken
@@ -86,7 +86,7 @@ BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD) $(BO
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # Prebuilt Kernel
-TARGET_KERNEL_CONFIG := mona
+TARGET_KERNEL_CONFIG := monai
 INLINE_KERNEL_BUILDING := true
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_NO_KERNEL_OVERRIDE := true
@@ -205,4 +205,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit the proprietary files
-include vendor/motorola/mona/BoardConfigVendor.mk
+include vendor/motorola/monai/BoardConfigVendor.mk

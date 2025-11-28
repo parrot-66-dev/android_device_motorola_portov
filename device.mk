@@ -403,4 +403,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/motorola/mona/mona-vendor.mk)
+$(call inherit-product, vendor/motorola/monai/monai-vendor.mk)

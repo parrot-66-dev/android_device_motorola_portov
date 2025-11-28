@@ -1,6 +1,6 @@
 <!--
     Input:
-        device/moto/mona/vintf/manifest_dn.xml
+        device/moto/monai/vintf/manifest_dn.xml
 -->
 <manifest version="8.0" type="device">
     <hal format="aidl" override="true">

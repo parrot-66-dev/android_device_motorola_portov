@@ -4,4 +4,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_mona.mk
+    $(LOCAL_DIR)/lineage_monai.mk
