@@ -1,7 +1,7 @@
 <!--
     Input:
         device/qcom/parrot66/manifest_parrot.xml
-        device/moto/monai/manifest_monai.xml
+        device/moto/portov/manifest_portov.xml
 -->
 <manifest version="8.0" type="device" target-level="202404">
     <hal format="aidl">

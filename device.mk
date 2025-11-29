@@ -283,7 +283,7 @@ PRODUCT_PACKAGES += \
     rfs_msm_mpss_readonly_vendor_fsg_symlink
 
 # Screen
-TARGET_SCREEN_DENSITY := 450
+TARGET_SCREEN_DENSITY := 390
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -403,4 +403,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/motorola/monai/monai-vendor.mk)
+$(call inherit-product, vendor/motorola/portov/portov-vendor.mk)

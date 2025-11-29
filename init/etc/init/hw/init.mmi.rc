@@ -255,7 +255,7 @@ on post-fs-data
     chmod 0664 /mnt/vendor/persist/batt_health/manufacturing_date
 
     # Setup folder for native to transfer data to NativeDropBoxAgent
-    mkdir /data/vendor/dropbox-add 0730 log diag
+    mkdir /data/vendor/dropbox-add 0770 log diag
 
     # Create panic dump dir.
     mkdir /data/vendor/dontpanic 0750 root log
@@ -443,6 +443,9 @@ on property:ro.vendor.bootreason=hw_warmreset
     stop zygote_secondary
     stop sensors
     start vendor.apanic_annotate
+
+on post-fs && property:ro.boot.force_aplogd_enable=1
+    setprop persist.vendor.log.aplogd.enable 1
 
 on property:persist.vendor.log.aplogd.enable=1
     start vendor.aplogd
@@ -692,6 +695,18 @@ on property:ro.carrier=ymobile
 
 # IKSWU-148561: Force shutter tone on Japan Docomo carrier
 on property:ro.carrier=docomo
+    setprop audio.camerasound.force true
+
+# IKSWV-155333: Force shutter tone on Japan retjp carrier
+on property:ro.carrier=retjp
+    setprop audio.camerasound.force true
+
+# IKSWV-155333: Force shutter tone on Japan kddi carrier
+on property:ro.carrier=kddi
+    setprop audio.camerasound.force true
+
+# IKSWV-155333: Force shutter tone on Japan rakuten carrier
+on property:ro.carrier=rakuten
     setprop audio.camerasound.force true
 
 # IKSWU-165346: Force shutter tone on Korea carriers

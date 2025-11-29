@@ -85,6 +85,12 @@
     <ctl name="RX_FIR Filter" value="OFF" />
     <ctl name="RX_EAR Mode" value="OFF" />
 
+    <!-- FS1815 Controls -->
+    <ctl name="SPK1 Ext AMP Mode" value="0" />
+    <ctl name="SPK2 Ext AMP Mode" value="0" />
+    <ctl name="SPK1 Ext AMP Switch" value="0" />
+    <ctl name="SPK2 Ext AMP Switch" value="0" />
+
     <!-- TX Controls -->
     <ctl name="VA_AIF1_CAP Mixer DEC0" value="0" />
     <ctl name="VA_AIF1_CAP Mixer DEC1" value="0" />
@@ -103,9 +109,12 @@
     <ctl name="VA SMIC MUX2" value="ZERO" />
     <ctl name="VA SMIC MUX3" value="ZERO" />
     <ctl name="VA_DEC0 MODE" value="ADC_DEFAULT" />
+    <ctl name="ADC2_BCS Disable" value="0" />
     <ctl name="LPI Enable" value="0" />
     <ctl name="ADC1_MIXER Switch" value="0" />
     <ctl name="ADC2_MIXER Switch" value="0" />
+    <ctl name="ADC3_MIXER Switch" value="0" />
+    <ctl name="ADC4_MIXER Switch" value="0" />
     <ctl name="ADC2 MUX" value="INP2" />
     <ctl name="DEC0_BCS Switch" value="0" />
     <ctl name="ADC2_BCS Disable" value="0" />
@@ -115,6 +124,10 @@
     <ctl name="VA_AMIC2_MIXER Switch" value="0" />
     <ctl name="VA_AMIC3_MIXER Switch" value="0" />
     <ctl name="VA_AMIC4_MIXER Switch" value="0" />
+    <ctl name="AMIC1_MIXER Switch" value="0" />
+    <ctl name="AMIC2_MIXER Switch" value="0" />
+    <ctl name="AMIC3_MIXER Switch" value="0" />
+    <ctl name="AMIC4_MIXER Switch" value="0" />
 
     <ctl name="TX_AIF1_CAP Mixer DEC0" value="0" />
     <ctl name="TX_AIF1_CAP Mixer DEC1" value="0" />
@@ -177,10 +190,10 @@
     <ctl name="TX_DEC6 Volume" value="84" />
     <ctl name="TX_DEC7 Volume" value="84" />
 
-    <ctl name="ADC1 Volume" value="12" />
-    <ctl name="ADC2 Volume" value="12" />
-    <ctl name="ADC3 Volume" value="12" />
-    <ctl name="ADC4 Volume" value="12" />
+    <ctl name="ADC1 Volume" value="8" />
+    <ctl name="ADC2 Volume" value="8" />
+    <ctl name="ADC3 Volume" value="8" />
+    <ctl name="ADC4 Volume" value="8" />
 
     <!-- Headphone class-H mode  -->
     <ctl name="RX_HPH_PWR_MODE" value="ULP" />
@@ -207,11 +220,6 @@
     <ctl name="GSM mode Enable" value="OFF" />
     <ctl name="SWR DAC_Port Switch" value="0" />
 
-    <!-- aw882xx amp -->
-    <ctl name="aw_dev_0_prof" value="Music" />
-    <ctl name="aw_dev_0_switch" value="Enable" />
-    <ctl name="aw_dev_1_prof" value="Music" />
-    <ctl name="aw_dev_1_switch" value="Enable" />
 
     <!-- HIFI Filter coefficients for headphones path -->
     <path name="hifi-filter-coefficients">
@@ -1822,45 +1830,104 @@
     <path name="spkr-vi-record">
     </path>
 
-    <path name="audio-with-haptics-playback speaker-and-haptics">
-    </path>
-
-    <path name="audio-with-haptics-playback headphones-and-haptics">
-    </path>
-
     <!-- These are actual sound device specific mixer settings -->
     <path name="amic1">
-        <ctl name="TX DEC0 MUX" value="SWR_MIC" />
-        <ctl name="ADC1 ChMap" value="SWRM_TX1_CH1" />
-        <ctl name="TX SMIC MUX0" value="SWR_MIC0" />
-        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+        <ctl name="TX DEC2 MUX" value="SWR_MIC" />
+        <ctl name="TX SMIC MUX2" value="SWR_MIC4" />
+        <ctl name="TX_AIF1_CAP Mixer DEC2" value="1" />
+        <ctl name="ADC1 ChMap" value="SWRM_TX2_CH1" />
+        <ctl name="TX0 MODE" value="ADC_LP" />
         <ctl name="ADC1_MIXER Switch" value="1" />
+        <ctl name="AMIC1_MIXER Switch" value="1" />
     </path>
 
     <path name="amic2">
-        <ctl name="TX DEC0 MUX" value="SWR_MIC" />
+       <ctl name="TX DEC0 MUX" value="SWR_MIC" />
         <ctl name="TX SMIC MUX0" value="SWR_MIC5" />
-        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
         <ctl name="DEC0_BCS Switch" value="1" />
+        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
         <ctl name="ADC2 MUX" value="INP2" />
         <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
         <ctl name="MBHC ChMap" value="SWRM_TX1_CH3" />
+        <ctl name="TX1 MODE" value="ADC_LP" />
         <ctl name="BCS Channel" value="CH2" />
+        <ctl name="HDR12 MUX" value="NO_HDR12" />
         <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="AMIC2_MIXER Switch" value="1" />
     </path>
 
+
     <path name="amic3">
-        <ctl name="TX DEC0 MUX" value="SWR_MIC" />
-        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH1" />
-        <ctl name="TX SMIC MUX0" value="SWR_MIC4" />
-        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+        <ctl name="TX DEC2 MUX" value="SWR_MIC" />
+        <ctl name="TX SMIC MUX2" value="SWR_MIC5" />
+        <ctl name="TX_AIF1_CAP Mixer DEC2" value="1" />
+        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
         <ctl name="ADC2 MUX" value="INP3" />
+        <ctl name="TX1 MODE" value="ADC_LP" />
+        <ctl name="ADC2_BCS Disable" value="1" />
+        <ctl name="HDR12 MUX" value="NO_HDR12" />
         <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="AMIC3_MIXER Switch" value="1" />
     </path>
 
     <path name="speaker">
-        <ctl name="aw_dev_0_prof" value="Music" />
-        <ctl name="aw_dev_1_prof" value="Music" />
+        <ctl name="AUX PATH Mode" value="HP_MODE" />
+        <ctl name="RX_MACRO RX2 MUX" value="AIF2_PB" />
+        <ctl name="RX_MACRO RX3 MUX" value="AIF2_PB" />
+        <ctl name="RX INT0_1 MIX1 INP1" value="RX2" />
+        <ctl name="RX INT2_1 MIX1 INP0" value="RX3" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT2 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="AUX_RDAC Switch" value="1" />
+        <ctl name="EAR_RDAC Switch" value="1" />
+        <ctl name="RDAC3_MUX" value="RX1" />
+        <ctl name="RX_EAR Mode" value="ON" />
+        <ctl name="RX_RX0 Digital Volume" value="84" />
+        <ctl name="RX_RX2 Digital Volume" value="84" />
+        <ctl name="SPK1 Ext AMP Mode" value="0" />
+        <ctl name="SPK2 Ext AMP Mode" value="0" />
+        <ctl name="SPK1 Ext AMP Switch" value="1" />
+        <ctl name="SPK2 Ext AMP Switch" value="1" />
+    </path>
+
+    <path name="speaker-voice">
+        <ctl name="AUX PATH Mode" value="HP_MODE" />
+        <ctl name="RX_MACRO RX2 MUX" value="AIF2_PB" />
+        <ctl name="RX_MACRO RX3 MUX" value="AIF2_PB" />
+        <ctl name="RX INT0_1 MIX1 INP1" value="RX2" />
+        <ctl name="RX INT2_1 MIX1 INP0" value="RX3" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT2 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="AUX_RDAC Switch" value="1" />
+        <ctl name="EAR_RDAC Switch" value="1" />
+        <ctl name="RDAC3_MUX" value="RX1" />
+        <ctl name="RX_EAR Mode" value="ON" />
+        <ctl name="RX_RX0 Digital Volume" value="84" />
+        <ctl name="RX_RX2 Digital Volume" value="84" />
+        <ctl name="SPK1 Ext AMP Mode" value="1" />
+        <ctl name="SPK2 Ext AMP Mode" value="1" />
+        <ctl name="SPK1 Ext AMP Switch" value="1" />
+        <ctl name="SPK2 Ext AMP Switch" value="1" />
+    </path>
+
+    <path name="speaker-voip">
+        <ctl name="AUX PATH Mode" value="HP_MODE" />
+        <ctl name="RX_MACRO RX2 MUX" value="AIF2_PB" />
+        <ctl name="RX_MACRO RX3 MUX" value="AIF2_PB" />
+        <ctl name="RX INT0_1 MIX1 INP1" value="RX2" />
+        <ctl name="RX INT2_1 MIX1 INP0" value="RX3" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT2 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="AUX_RDAC Switch" value="1" />
+        <ctl name="EAR_RDAC Switch" value="1" />
+        <ctl name="RDAC3_MUX" value="RX1" />
+        <ctl name="RX_EAR Mode" value="ON" />
+        <ctl name="RX_RX0 Digital Volume" value="84" />
+        <ctl name="RX_RX2 Digital Volume" value="84" />
+        <ctl name="SPK1 Ext AMP Mode" value="2" />
+        <ctl name="SPK2 Ext AMP Mode" value="2" />
+        <ctl name="SPK1 Ext AMP Switch" value="1" />
+        <ctl name="SPK2 Ext AMP Switch" value="1" />
     </path>
 
     <path name="haptics-dev">
@@ -1868,15 +1935,43 @@
     </path>
 
     <path name="speaker-mono">
-        <ctl name="aw_dev_0_prof" value="Receiver" />
-        <ctl name="aw_dev_1_prof" value="Music" />
-        <ctl name="aw_dev_1_switch" value="Disable" />
+        <ctl name="AUX PATH Mode" value="HP_MODE" />
+        <ctl name="RX_MACRO RX2 MUX" value="AIF2_PB" />
+        <ctl name="RX_MACRO RX3 MUX" value="AIF2_PB" />
+        <ctl name="RX INT0_1 MIX1 INP1" value="RX2" />
+        <ctl name="RX INT2_1 MIX1 INP0" value="RX3" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT2 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="AUX_RDAC Switch" value="1" />
+        <ctl name="EAR_RDAC Switch" value="1" />
+        <ctl name="RDAC3_MUX" value="RX1" />
+        <ctl name="RX_EAR Mode" value="ON" />
+        <ctl name="RX_RX0 Digital Volume" value="84" />
+        <ctl name="RX_RX2 Digital Volume" value="84" />
+        <ctl name="SPK1 Ext AMP Mode" value="0" />
+        <ctl name="SPK2 Ext AMP Mode" value="0" />
+        <ctl name="SPK1 Ext AMP Switch" value="1" />
+        <ctl name="SPK2 Ext AMP Switch" value="0" />
     </path>
 
     <path name="speaker-mono-2">
-        <ctl name="aw_dev_0_prof" value="Receiver" />
-        <ctl name="aw_dev_0_switch" value="Disable" />
-        <ctl name="aw_dev_1_prof" value="Music" />
+        <ctl name="AUX PATH Mode" value="HP_MODE" />
+        <ctl name="RX_MACRO RX2 MUX" value="AIF2_PB" />
+        <ctl name="RX_MACRO RX3 MUX" value="AIF2_PB" />
+        <ctl name="RX INT0_1 MIX1 INP1" value="RX2" />
+        <ctl name="RX INT2_1 MIX1 INP0" value="RX3" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT2 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="AUX_RDAC Switch" value="1" />
+        <ctl name="EAR_RDAC Switch" value="1" />
+        <ctl name="RDAC3_MUX" value="RX1" />
+        <ctl name="RX_EAR Mode" value="ON" />
+        <ctl name="RX_RX0 Digital Volume" value="84" />
+        <ctl name="RX_RX2 Digital Volume" value="84" />
+        <ctl name="SPK1 Ext AMP Mode" value="0" />
+        <ctl name="SPK2 Ext AMP Mode" value="0" />
+        <ctl name="SPK1 Ext AMP Switch" value="0" />
+        <ctl name="SPK2 Ext AMP Switch" value="1" />
     </path>
 
     <path name="speaker-mono-vbat">
@@ -1942,15 +2037,21 @@
     <path name="sidetone-handset">
         <path name="sidetone-iir" />
         <ctl name="IIR0 INP0 Volume" value="40" />
-        <ctl name="IIR0 INP0 MUX" value="DEC1" />
+        <ctl name="IIR0 INP0 MUX" value="DEC2" />
         <ctl name="RX INT2 MIX2 INP" value="SRC0" />
     </path>
 
     <path name="afe-sidetone">
+        <ctl name="Voice Sidetone Enable" value="1" />
     </path>
 
     <path name="speaker-mic">
         <path name="amic3" />
+    </path>
+
+    <path name="speaker-mic1">
+        <path name="amic1" />
+	<ctl name="ADC1 Volume" value="8" />
     </path>
 
     <path name="speaker-mic-liquid">
@@ -1974,6 +2075,10 @@
 
     <path name="voice-speaker-stereo-protected">
         <path name="speaker-protected" />
+    </path>
+
+    <path name="voip-speaker-stereo">
+        <path name="speaker-voip"/>
     </path>
 
     <path name="speaker-protected-vbat">
@@ -2002,7 +2107,15 @@
     </path>
 
     <path name="handset">
-        <path name="speaker-mono" />
+        <ctl name="RX_MACRO RX3 MUX" value="AIF2_PB" />
+        <ctl name="RX_CDC_DMA_RX_0 Channels" value="One" />
+        <ctl name="RX INT0_1 MIX1 INP0" value="RX3" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="EAR_RDAC Switch" value="1" />
+        <ctl name="RDAC3_MUX" value="RX1" />
+        <ctl name="RX_EAR Mode" value="ON" />
+        <ctl name="SPK2 Ext AMP Mode" value="8" />
+        <ctl name="SPK2 Ext AMP Switch" value="1" />
     </path>
 
     <path name="handset-mic">
@@ -2025,10 +2138,6 @@
         <path name="amic3" />
     </path>
 
-    <path name="screen-record-mic">
-        <path name="amic3" />
-    </path>
-
     <path name="headphones">
         <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
         <ctl name="RX_MACRO RX1 MUX" value="AIF1_PB" />
@@ -2036,10 +2145,6 @@
         <ctl name="RX INT1_1 MIX1 INP0" value="RX1" />
         <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
         <ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
-        <ctl name="RX_COMP1 Switch" value="1" />
-        <ctl name="RX_COMP2 Switch" value="1" />
-        <ctl name="HPHL_COMP Switch" value="1" />
-        <ctl name="HPHR_COMP Switch" value="1" />
         <ctl name="HPHL_RDAC Switch" value="1" />
         <ctl name="HPHR_RDAC Switch" value="1" />
     </path>
@@ -2076,6 +2181,7 @@
     <path name="headset-mic">
         <ctl name="TX_DEC0 Volume" value="84" />
         <path name="amic2" />
+        <ctl name="ADC2 Volume" value="12" />
     </path>
 
     <path name="headset-mic-liquid">
@@ -2091,8 +2197,7 @@
     </path>
 
     <path name="voice-handset-hac">
-        <ctl name="aw_dev_1_switch" value="Disable" />
-        <ctl name="aw_dev_0_prof" value="HAC" />
+        <path name="handset" />
     </path>
 
     <path name="voice-handset-hdk">
@@ -2108,7 +2213,7 @@
     </path>
 
     <path name="voice-speaker-stereo">
-        <path name="speaker" />
+        <path name="speaker-voice" />
     </path>
 
     <path name="voice-speaker-2">
@@ -2145,6 +2250,7 @@
 
     <path name="voice-speaker-mic">
         <path name="speaker-mic" />
+        <ctl name="ADC2 Volume" value="12" />
     </path>
 
     <path name="voice-headphones">
@@ -2250,28 +2356,35 @@
     </path>
 
     <path name="va-mic-mono">
-        <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="VA DEC0 MUX" value="SWR_MIC" />
-        <ctl name="ADC1 ChMap" value="SWRM_TX1_CH1" />
-        <ctl name="VA SMIC MUX0" value="SWR_MIC0" />
-        <ctl name="ADC1_MIXER Switch" value="1" />
-        <ctl name="VA_DEC0 MODE" value="ADC_LOW_PWR" />
+        <ctl name="VA_AIF1_CAP Mixer DEC2" value="1" />
+        <ctl name="VA DEC2 MUX" value="SWR_MIC" />
+        <ctl name="VA_DEC2 MODE" value="ADC_LOW_PWR" />
+        <ctl name="TX1 MODE" value="ADC_LP" />
+        <ctl name="ADC2 MUX" value="INP3" />
+        <ctl name="VA SMIC MUX2" value="SWR_MIC5" />
+        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
+        <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="VA_AMIC3_MIXER Switch" value="1" />
     </path>
 
     <path name="va-mic-dmic">
         <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="VA_AIF1_CAP Mixer DEC2" value="1" />
+        <ctl name="VA_AIF1_CAP Mixer DEC1" value="1" />
         <ctl name="VA DEC0 MUX" value="SWR_MIC" />
-        <ctl name="VA DEC2 MUX" value="SWR_MIC" />
+        <ctl name="VA DEC1 MUX" value="SWR_MIC" />
         <ctl name="VA_DEC0 MODE" value="ADC_LOW_PWR" />
-        <ctl name="VA_DEC2 MODE" value="ADC_LOW_PWR" />
-        <ctl name="VA SMIC MUX0" value="SWR_MIC4" />
-        <ctl name="VA SMIC MUX2" value="SWR_MIC0" />
-        <ctl name="ADC1 ChMap" value="SWRM_TX1_CH1" />
-        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH1" />
+        <ctl name="VA_DEC1 MODE" value="ADC_LOW_PWR" />
+        <ctl name="TX2 MODE" value="ADC_LP" />
+        <ctl name="TX1 MODE" value="ADC_LP" />
         <ctl name="ADC2 MUX" value="INP3" />
-        <ctl name="ADC1_MIXER Switch" value="1" />
+        <ctl name="VA SMIC MUX0" value="SWR_MIC5" />
+        <ctl name="VA SMIC MUX1" value="SWR_MIC4" />
+        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
+        <ctl name="ADC1 ChMap" value="SWRM_TX2_CH1" />
         <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="ADC1_MIXER Switch" value="1" />
+        <ctl name="VA_AMIC3_MIXER Switch" value="1" />
+        <ctl name="VA_AMIC1_MIXER Switch" value="1" />
     </path>
 
     <path name="va-mic">
@@ -2297,21 +2410,28 @@
         <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
         <ctl name="VA DEC0 MUX" value="SWR_MIC" />
         <ctl name="VA SMIC MUX0" value="SWR_MIC5" />
+        <ctl name="TX1 MODE" value="ADC_LP" />
         <ctl name="ADC2 MUX" value="INP2" />
         <ctl name="VA_DEC0 MODE" value="ADC_LOW_PWR" />
         <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
+        <ctl name="HDR12 MUX" value="NO_HDR12" />
+        <ctl name="ADC2_BCS Disable" value="1" />
         <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="VA_AMIC2_MIXER Switch" value="1" />
     </path>
 
     <path name="headset-va-mic">
         <ctl name="VA_AIF1_CAP Mixer DEC0" value="1" />
         <ctl name="VA DEC0 MUX" value="SWR_MIC" />
         <ctl name="VA SMIC MUX0" value="SWR_MIC5" />
+        <ctl name="TX1 MODE" value="ADC_LP" />
         <ctl name="ADC2 MUX" value="INP2" />
         <ctl name="VA_DEC0 MODE" value="ADC_LOW_PWR" />
         <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
+        <ctl name="HDR12 MUX" value="NO_HDR12" />
         <ctl name="ADC2_BCS Disable" value="1" />
         <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="VA_AMIC2_MIXER Switch" value="1" />
     </path>
 
     <!-- Dual MIC devices -->
@@ -2334,8 +2454,8 @@
         <ctl name="TX DEC2 MUX" value="SWR_MIC" />
         <ctl name="ADC1 ChMap" value="SWRM_TX1_CH1" />
         <ctl name="ADC2 ChMap" value="SWRM_TX2_CH1" />
-        <ctl name="TX SMIC MUX0" value="SWR_MIC4" />
         <ctl name="TX SMIC MUX2" value="SWR_MIC0" />
+        <ctl name="TX SMIC MUX0" value="SWR_MIC4" />
         <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
         <ctl name="TX_AIF1_CAP Mixer DEC2" value="1" />
         <ctl name="ADC1_MIXER Switch" value="1" />
@@ -2345,16 +2465,10 @@
 
     <path name="handset-dual-mic">
         <path name="handset-dmic-endfire" />
-        <ctl name="ADC1 Volume" value="8" />
-        <ctl name="ADC2 Volume" value="8" />
-        <ctl name="ADC3 Volume" value="8" />
     </path>
 
     <path name="speaker-dual-mic-invert">
         <path name="speaker-dmic-endfire" />
-        <ctl name="ADC1 Volume" value="8" />
-        <ctl name="ADC2 Volume" value="8" />
-        <ctl name="ADC3 Volume" value="8" />
     </path>
 
     <path name="dmic-endfire">
@@ -2442,12 +2556,10 @@
 
     <path name="camcorder-dual-mic">
         <path name="speaker-dmic-endfire" />
-        <ctl name="ADC1 Volume" value="8" />
-        <ctl name="ADC2 Volume" value="8" />
-        <ctl name="ADC3 Volume" value="8" />
     </path>
 
     <!-- TTY devices -->
+
     <path name="tty-headphones">
         <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
         <ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
@@ -2495,8 +2607,11 @@
         <ctl name="ADC2 MUX" value="INP2" />
         <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
         <ctl name="MBHC ChMap" value="SWRM_TX3_CH3" />
+        <ctl name="TX1 MODE" value="ADC_LP" />
         <ctl name="BCS Channel" value="CH10" />
+        <ctl name="HDR12 MUX" value="NO_HDR12" />
         <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="AMIC2_MIXER Switch" value="1" />
     </path>
 
     <path name="voice-tty-vco-handset-mic">
@@ -2550,16 +2665,13 @@
     <path name="ADSP testfwk">
     </path>
 
+    <path name="echo-ref-record">
+    </path>
+
     <path name="bt-a2dp">
     </path>
 
     <path name="bt-a2dp-mic">
-    </path>
-
-    <path name="bt-ble">
-    </path>
-
-    <path name="bt-ble-mic">
     </path>
 
     <path name="speaker-and-bt-a2dp">
@@ -2998,7 +3110,10 @@
     <path name="call-proxy-in">
     </path>
 
-    <path name="echo-ref-record">
+    <path name="bt-ble">
+    </path>
+
+    <path name="bt-ble-mic">
     </path>
 
 </mixer>

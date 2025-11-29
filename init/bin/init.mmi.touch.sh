@@ -620,6 +620,13 @@ set_ro_hw_properties_exponent_panel()
 	lid=1
 
 	has_lid=$(getprop $lid_property 2> /dev/null)
+
+	local prim_enable_brightnesszone_path=/sys/class/drm/card0-DSI-1/panelEnableSfBrightZone
+	local prim_enable_brightnesszone_prop=ro.vendor.hw.prim_enable_sf_brightnesszone
+
+	local cli_enable_brightnesszone_path=/sys/class/drm/card0-DSI-2/panelEnableSfBrightZone
+	local cli_enable_brightnesszone_prop=ro.vendor.hw.cli_enable_sf_brightnesszone
+
 	while [ "$wait_cnt" -lt 15 ]; do
 		if [ -e $panelname_path ]; then
 			panelname=$(cat $panelname_path)
@@ -630,6 +637,29 @@ set_ro_hw_properties_exponent_panel()
 			    prim_declare_str=$(cat $prim_declare_path)
 			    setprop $prim_declare_prop "$prim_declare_str"
 			    notice "setprop $prim_declare_prop as $prim_declare_str for panel [$panelname]"
+			fi
+			if [ -e $prim_enable_brightnesszone_path ]; then
+			    prim_enable_brightnesszone_str=$(cat $prim_enable_brightnesszone_path)
+				if [ $prim_enable_brightnesszone_str -eq 1 ]; then
+			    setprop $prim_enable_brightnesszone_prop true
+			    notice "setprop $prim_enable_brightnesszone_prop as true"
+				fi
+				if [ $prim_enable_brightnesszone_str -eq 0 ]; then
+			    setprop $prim_enable_brightnesszone_prop false
+			    notice "setprop $prim_enable_brightnesszone_prop as false"
+				fi
+			fi
+
+			if [ -e $cli_enable_brightnesszone_path ]; then
+			    cli_enable_brightnesszone_str=$(cat $cli_enable_brightnesszone_path)
+				if [ $cli_enable_brightnesszone_str -eq 1 ]; then
+			    setprop $cli_enable_brightnesszone_prop true
+			    notice "setprop $cli_enable_brightnesszone_prop as true"
+				fi
+				if [ $cli_enable_brightnesszone_str -eq 0 ]; then
+			    setprop $cli_enable_brightnesszone_prop false
+			    notice "setprop $cli_enable_brightnesszone_prop as false"
+				fi
 			fi
 			if [ $has_lid -eq $lid ]
 			then
