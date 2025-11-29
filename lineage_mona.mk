@@ -17,6 +17,6 @@ PRODUCT_NAME := lineage_mona
 PRODUCT_DEVICE := mona
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
-PRODUCT_MODEL := motorola moto g stylus 5G (2025)
+PRODUCT_MODEL := motorola moto g stylus - 2025
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
