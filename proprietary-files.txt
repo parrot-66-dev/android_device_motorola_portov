@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from Moto G75 (15 V1UQS35H.103-16-5 1119c-0c79b).
+## are from Moto G75 (15 V1UQS35H.103-16-9 5d30fe-55e2ef).
 ## variant: RETAIL
 
 # ACDB Data
