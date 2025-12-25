@@ -23,7 +23,7 @@ namespace_imports = [
     'device/motorola/sm7435-common',
     'vendor/motorola/sm7435-common',
     'hardware/motorola',
-    'hardware/qcom-caf/waipio66',
+    'hardware/qcom-caf/sm8450-6.6',
     'vendor/qcom/opensource/commonsys-intf/display',
 ]
 
@@ -43,11 +43,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so',
     ): blob_fixup()
         .replace_needed('android.hardware.graphics.allocator-V1-ndk.so', 'android.hardware.graphics.allocator-V2-ndk.so'),
-    (
-        'vendor/lib64/libcamera2ndk_vendor.so',
-    ): blob_fixup()
-        .replace_needed('android.frameworks.cameraservice.device-V2-ndk.so', 'android.frameworks.cameraservice.device-V3-ndk.so')
-        .replace_needed('android.frameworks.cameraservice.service-V2-ndk.so', 'android.frameworks.cameraservice.service-V3-ndk.so'),
+    'vendor/etc/init/android.hardware.biometrics.fingerprint-service-rbs2.rc': blob_fixup()
+        .regex_replace(r'\s+disabled\n', ''),
 }
 
 extract_fns: extract_fns_user_type = {
@@ -55,7 +52,7 @@ extract_fns: extract_fns_user_type = {
 }
 
 module = ExtractUtilsModule(
-    'paros',
+    'mona',
     'motorola',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
