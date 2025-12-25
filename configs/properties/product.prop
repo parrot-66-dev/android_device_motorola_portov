@@ -3,10 +3,10 @@ masterclear.allow_retain_esim_profiles_after_fdr=true
 ro.telephony.esim_slot_id=1
 
 # Google
-ro.opa.device_model_id=motorola-paros
+ro.opa.device_model_id=motorola-mona
 
 # Motorola
 ro.mot.build.customerid=global
 
 # Radio
-ro.vendor.radio.imei.sv=12
+ro.vendor.radio.imei.sv=3

@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_paros.mk
+    $(LOCAL_DIR)/lineage_mona.mk

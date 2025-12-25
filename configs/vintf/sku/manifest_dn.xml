@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: The LineageOS Project
-     SPDX-License-Identifier: Apache-2.0
+    Input:
+        device/moto/mona/vintf/manifest_dn.xml
 -->
-<manifest version="4.0" type="device">
-    <hal format="hidl" override="true">
+<manifest version="8.0" type="device">
+    <hal format="aidl" override="true">
         <name>android.hardware.secure_element</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.2::ISecureElement/SIM1</fqname>
-        <fqname>@1.2::ISecureElement/SIM2</fqname>
+        <fqname>ISecureElement/SIM1</fqname>
+        <fqname>ISecureElement/SIM2</fqname>
     </hal>
 </manifest>
