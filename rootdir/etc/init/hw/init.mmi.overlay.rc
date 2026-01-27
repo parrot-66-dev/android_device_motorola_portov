@@ -93,6 +93,7 @@ on early-boot
     chmod 664 /sys/class/backlight/panel1-backlight/brightness
     # for ufs HID
     chown system system /sys/devices/platform/soc/1d84000.ufshc/ufshid/trigger
+    chown system system /sys/devices/platform/soc/1d84000.ufshc/ufshid/color
 
     # for ghost log capture
     chmod 0444 /dev/tp_tools
@@ -264,16 +265,26 @@ on property:sys.boot_completed=1 && property:ro.vendor.build.motfactory=1
 
 #change for Geneva5G NA (SM6450) because the node changed
 on property:vendor.wifi.tethering=false
-    write /sys/module/qca6750/parameters/sar_mhs disabled
+    write /sys/module/qca_cld3_qca6750/parameters/sar_mhs disabled
 
 on property:vendor.wifi.tethering=true
-    write /sys/module/qca6750/parameters/sar_mhs enabled
+    write /sys/module/qca_cld3_qca6750/parameters/sar_mhs enabled
 
 on property:vendor.wifi.station=true
-    write /sys/module/qca6750/parameters/sar_sta enabled
+    write /sys/module/qca_cld3_qca6750/parameters/sar_sta enabled
 
 on property:vendor.wifi.station=false
-    write /sys/module/qca6750/parameters/sar_sta disabled
+    write /sys/module/qca_cld3_qca6750/parameters/sar_sta disabled
+
+service vendor.netconfig /vendor/bin/vendor_netconfig
+    class main
+    user root
+    group root system
+    oneshot
+    disabled
+
+on boot && property:ro.bootmode=mot-factory
+    start vendor.netconfig
 
 on property:ro.bootmode=mot-factory
     write /sys/class/leds/charging/brightness 100
@@ -315,14 +326,6 @@ service nqnfcinfo /vendor/bin/nqnfcinfo
     group nfc
     user system
     oneshot
-
-on property:vendor.qti.nfc.chipid=0xca
-    setprop persist.vendor.nfc.config_file_name libnfc-PN560.conf
-    start vendor.nfc_hal_service
-
-on property:vendor.qti.nfc.chipid=0xc1
-    setprop persist.vendor.nfc.config_file_name libnfc-SN220-UICC.conf
-    start vendor.nfc_hal_service
 
 service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.nxp
     override

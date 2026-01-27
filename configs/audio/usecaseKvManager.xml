@@ -190,6 +190,14 @@
                 <!-- INSTANCE - INSTANCE_1 -->
                 <graph_kv key="0xAB000000" value="0x1"/>
             </keys_and_values>
+            <keys_and_values VUIModuleType="CUSTOM" Instance="1">
+                <!-- STREAM_CONFIG - STREAM_CFG_VUI_CUSTOM -->
+                <graph_kv key="0xBC000000" value="0xBC000004"/>
+                <!-- STREAMTX - VOICE_UI -->
+                <graph_kv key="0xB1000000" value="0xB1000003"/>
+                <!-- INSTANCE - INSTANCE_1 -->
+                <graph_kv key="0xAB000000" value="0x1"/>
+            </keys_and_values>
         </stream>
         <!-- PCM-Offload stream -->
         <stream type="PAL_STREAM_PCM_OFFLOAD">
@@ -1153,8 +1161,8 @@
             <keys_and_values StreamType="PAL_STREAM_DEEP_BUFFER" CustomConfig="nn-sm">
                 <!-- DEVICETX - USB_TX -->
                 <graph_kv key="0xA3000000" value="0xA3000005"/>
-                <!-- DEVICEPP_TX - DEVICEPP_TX_AUDIO_FLUENCE_NN_SM -->
-                <graph_kv key="0xAD000000" value="0xAD000016"/>
+                <!-- DEVICEPP_TX - DEVICEPP_TX_AUDIO_FLUENCE_SMECNS -->
+                <graph_kv key="0xAD000000" value="0xAD000002"/>
             </keys_and_values>
             <keys_and_values StreamType="PAL_STREAM_VOICE_CALL">
                 <!-- DEVICETX - USB_TX -->
@@ -1217,6 +1225,20 @@
                 <graph_kv key="0xA3000000" value="0xA3000006"/>
                 <!-- DEVICEPP_TX - DEVICEPP_TX_RAW_NLPI -->
                 <graph_kv key="0xAD000000" value="0xAD00000E"/>
+            </keys_and_values>
+            <keys_and_values StreamType="PAL_STREAM_VOICE_UI,PAL_STREAM_SENSOR_PCM_DATA"
+                DevicePPType="SINGLE_MIC_16KHZ_16BIT_RAW_LPI_AIS">
+                <!-- DEVICETX - HANDSETMIC_VA -->
+                <graph_kv key="0xA3000000" value="0xA3000006"/>
+                <!-- DEVICEPP_TX - DEVICEPP_TX_VOICE_UI_RAW_LPI_SD -->
+                <graph_kv key="0xAD000000" value="0xAD100003"/>
+            </keys_and_values>
+            <keys_and_values StreamType="PAL_STREAM_VOICE_UI"
+                DevicePPType="SINGLE_MIC_16KHZ_16BIT_AIS_ECNS">
+                <!-- DEVICETX - HANDSETMIC_VA -->
+                <graph_kv key="0xA3000000" value="0xA3000006"/>
+                <!-- DEVICEPP_TX - DEVICEPP_TX_VOICE_UI_AIS_ECNS -->
+                <graph_kv key="0xAD000000" value="0xAD100004"/>
             </keys_and_values>
         </devicepp>
         <!-- IN Headset VA MIC  DevicePPs -->

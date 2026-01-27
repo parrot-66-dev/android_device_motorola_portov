@@ -28,7 +28,7 @@ vendor_list=('goodix' 'fpc')
 kernel_so_list=("/vendor/lib/modules/goodix_fod_mmi.ko" "/vendor/lib/modules/fpc1020_mmi.ko")
 kernel_so_name_list=("goodix_fod_mmi.ko" "fpc1020_mmi.ko")
 dev_node_list=("/dev/goodix_fp" "/sys/class/fingerprint/fpc1020/irq")
-hal_list=('goodix_hal' 'fps_hal')
+hal_list=('goodix_hal' 'vendor.fingerprint-fpc')
 last_vendor_index=`expr ${#vendor_list[@]} - 1`
 vendor_list_size=${#vendor_list[@]}
 
