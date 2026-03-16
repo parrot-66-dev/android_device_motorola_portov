@@ -32,12 +32,6 @@ on early-boot
 
     # change permission of backlight brightness for tcmd daemon
     chmod 664 /sys/class/backlight/panel1-backlight/brightness
-    # for ufs HID
-    chown system system /sys/devices/platform/soc/1d84000.ufshc/ufshid/trigger
-    chown system system /sys/devices/platform/soc/1d84000.ufshc/ufshid/color
-
-    # for ghost log capture
-    chmod 0444 /dev/tp_tools
 
     # Add for after-sales ois gyro cal
     mkdir /mnt/vendor/persist/camera/gyro_compat 0770 vendor_tcmd camera
