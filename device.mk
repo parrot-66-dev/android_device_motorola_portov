@@ -44,6 +44,7 @@ PRODUCT_PACKAGES += \
     FrameworksResDevice \
     LineageSdkResDevice \
     LineageSystemUIResDevice \
+    NfcResDevice \
     RegulatoryOverlayXT2533-3 \
     RegulatoryOverlayXT2533-4 \
     RegulatoryOverlayXT2533-5 \
