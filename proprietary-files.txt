@@ -1,6 +1,6 @@
 
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from moto g stylus 5g 2025 (16 W1VA36.62-22-16-1).
+## are from moto g stylus 5g 2025 (16 W1VAS36.62-22-16-16).
 ## variant: RETUS
 
 # ACDB Data
@@ -38,6 +38,10 @@ vendor/lib64/camera/fdconfigpreview.mot_gc32e1.bin
 vendor/lib64/camera/fdconfigpreview.mot_imx896.bin
 vendor/lib64/camera/fdconfigpreviewlite.bin
 vendor/lib64/camera/fdconfigvideo.bin
+vendor/lib64/camera/fdconfigvideo.mot_gc13a2.bin
+vendor/lib64/camera/fdconfigvideo.mot_gc32e1.bin
+vendor/lib64/camera/fdconfigvideo.mot_imx896.bin
+vendor/lib64/camera/fdconfigvideolite.bin
 vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/com.qti.chi.override.so
 vendor/lib64/camera.device@1.0-impl.so
@@ -315,6 +319,9 @@ vendor/lib64/camera/com.qti.tuned.mot_mona_imx896.bin
 
 # CapSense
 vendor/bin/capsense_reset
+
+# Display configurations
+vendor/etc/displayconfig/display_id_4630946916234099603.xml
 
 # Charger Firmware
 vendor/firmware/sc9624.bin

@@ -21,9 +21,7 @@ PRODUCT_MODEL := motorola moto g stylus - 2025
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
-# TODO: Update build desc when full zip is available
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="mona_g-user 16 W1VA36.62-22-16 ba798b-5a0125 release-keys" \
-    BuildFingerprint=motorola/mona_g/msi:16/W1VAS36M-W1-ST15.1/ca2fc5:user/release-keys \
-    DeviceProduct=mona_g
+    BuildDesc="mona_g-user 16 W1VAS36.62-22-16-16 5d4b3-34456 release-keys" \
+    BuildFingerprint="motorola/mona/mona:15/VVA3S5V-W1-ST15.1/5d4b3:user/release-keys" \
+    DeviceProduct="mona_g"

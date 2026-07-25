@@ -23,7 +23,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/properties/vendor.prop
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 
 # Security
-BOOT_SECURITY_PATCH := 2026-01-01
+BOOT_SECURITY_PATCH := 2026-06-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Vintf
@@ -32,8 +32,8 @@ ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_dn.xml
 ODM_MANIFEST_N_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_n.xml
 
 # Verified Boot
-BOARD_AVB_ROLLBACK_INDEX := 12
-BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 12
+BOARD_AVB_ROLLBACK_INDEX := 18
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 18
 
 # inherit from the proprietary version
 include vendor/motorola/mona/BoardConfigVendor.mk
