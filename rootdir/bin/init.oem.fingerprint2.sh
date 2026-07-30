@@ -17,6 +17,9 @@ function log {
     echo "$script_name: $*" > /dev/kmsg
 }
 
+PROP_GKI_PATH=ro.vendor.mot.gki.path
+GKI_PATH=$(getprop $PROP_GKI_PATH)
+
 # for new projects, only need to config varible vendor_list,kernel_so_list,kernel_so_name_list,hal_list
 # vendor_list: the array contains the sensor name, it will be used for system properties.
 # kernel_so_list: the array contains the kernel so's absolute path. It will be used at insmod.
@@ -24,10 +27,11 @@ function log {
 # hal_list: the array contains the hal service name.
 #
 # note: all arrays should have the same size.
-vendor_list=('goodix' 'egis')
-kernel_so_list=("/vendor/lib/modules/goodix_fod_mmi.ko" "/vendor/lib/modules/rbs_fod_mmi.ko")
-kernel_so_name_list=("goodix_fod_mmi.ko" "rbs_fod_mmi.ko")
-hal_list=('goodix_hal' 'ets_hal')
+vendor_list=('fpc' 'jiiov')
+kernel_so_list=("/vendor/lib/modules/$GKI_PATH/fpc1020_mmi.ko" "/vendor/lib/modules/$GKI_PATH/anc_fps_mmi.ko")
+kernel_so_name_list=("fpc1020_mmi.ko" "anc_fps_mmi.ko")
+dev_node_list=("/sys/class/fingerprint/fpc1020/irq" "/dev/jiiov_fp")
+hal_list=('vendor.fingerprint-fpc' 'jv_hal')
 last_vendor_index=`expr ${#vendor_list[@]} - 1`
 vendor_list_size=${#vendor_list[@]}
 
@@ -87,8 +91,22 @@ function start_hal_service(){
     setprop $prop_fps_ident $FPS_STATUS_NONE
 
     insmod ${kernel_so_list[$1]}
+    log "${kernel_so_list[$1]} insmod"
     sleep 1
     setprop $prop_fps_ident ${vendor_list[$1]}
+
+    retry=1
+    while [ $retry -lt 5 ]
+    do
+        if [ -e  "${dev_node_list[$1]}" ]; then
+            log "dev node : ${dev_node_list[$1]} is ready"
+            break
+        else
+            log "driver is not ready, $retry times wait 1s to retry"
+            sleep 1
+        fi
+        let retry++
+    done
 
     log "start ${hal_list[$1]}"
     start ${hal_list[$1]}

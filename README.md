@@ -2,27 +2,27 @@ SPDX-FileCopyrightText: The LineageOS Project
 
 SPDX-License-Identifier: Apache-2.0
 
-Device configuration for Motorola Moto G Stylus 5G (2025)
+Device configuration for Motorola moto g 67 power 5G
 =========================================
 
-The Motorola Moto G Stylus 5G (2025) (codenamed _"mona"_) is a mid-range smartphone from Motorola.
+The Motorola moto g 67 power 5G (codenamed _"portov"_) is a mid-range smartphone from Motorola.
 
-It was globally released in April 2025.
+It was globally released in November 2025.
 
 ## Device specifications
 
 Basic   | Spec Sheet
 -------:|:-------------------------
-Platform | Snapdragon® 6 Gen 3 (SM6475)
-RAM & Storage | 8GB/128GB, 8GB/256GB (LPDDR4X RAM, UFS 2.2 storage)
+Platform | Snapdragon® 7s Gen 2 (SM7435-AB)
+RAM & Storage | 8GB/128GB, 8GB/256GB, 12GB/256GB (LPDDR4X RAM)
 Shipped Android Version | 15
-Battery | Non-removable, 5000 mAh
-Display | 6.78″, 120Hz, 1220x2712 (444 ppi)
-Rear camera | 50MP wide, 13MP ultrawide
+Battery | Non-removable, 7000 mAh
+Display | 6.7″, 120Hz, 1080x2400 (391 ppi)
+Rear camera | 50MP wide, 8MP ultrawide
 Front camera | 32MP in-display
 
 ## Device picture
 
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://fdn2.gsmarena.com/vv/pics/motorola/motorola-moto-g-stylus-5g-2025-1.jpg" alt="Image 1"/>
+    <img src="https://fdn2.gsmarena.com/vv/pics/motorola/motorola-moto-g100-cn-1.jpg" alt="Image 1"/>
 </div>

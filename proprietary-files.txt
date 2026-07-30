@@ -1,12 +1,13 @@
 
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from moto g stylus 5g 2025 (16 W1VAS36.62-22-16-16).
-## variant: RETUS
+## are from moto g67 power 5G (16 W1VT36H.22-20-3-2).
+## variant: RETID
 
 # ACDB Data
 vendor/etc/acdbdata/nn_ns_models/fai__2.6.3_0.0__3.0.0_0.0__eai_1.10_enpu1.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.7.0_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_1.43_enpu2.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.8.1.11_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_1.43_enpuv2.pmd
+vendor/etc/acdbdata/nn_ns_models/fai__4.8.14_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_1.43_enpu2.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.8.14_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_1.43_enpu2.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.8.4_0.0__3.0.0_0.0__eai_1.43_enpu2.pmd
 vendor/etc/acdbdata/nn_vad_models/fai__3.0.0_0.0__eai_1.36_enpu2.pmd
@@ -18,29 +19,29 @@ vendor/etc/audio/sku_parrot/mixer_paths_parrot_qrd.xml
 vendor/etc/audio/sku_parrot/resourcemanager_parrot_qrd.xml
 vendor/etc/audio_ext_spkr.conf
 vendor/etc/usecaseKvManager.xml
-vendor/etc/usecaseKvManager_tmo.xml
 
 # Audio firmware
-vendor/firmware/aw882xx_acf.bin
+vendor/firmware/aw963xx_reg_0.bin
 
 # Camera
 system_ext/lib64/vendor.qti.hardware.seccam@1.0.so
-vendor/bin/hw/motorola.hardware.camera.imgtuner.aidl-service
 vendor/bin/hw/vendor.qti.camera.provider-service_64
-vendor/etc/init/motorola.hardware.camera.imgtuner.aidl-service.rc
 vendor/etc/init/vendor.qti.camera.provider-service_64.rc
 vendor/etc/vintf/manifest/com.motorola.hardware.camera.postprocess-impl.xml
-vendor/etc/vintf/manifest/motorola.hardware.camera.imgtuner.aidl.xml
 vendor/etc/vintf/manifest/vendor.qti.camera.provider.xml
+vendor/lib64/camera/arcsoft_dc_calibration_u.bin
+vendor/lib64/camera/arcsoft_dc_calibration_u_2nd.bin
 vendor/lib64/camera/fdconfigpreview.bin
-vendor/lib64/camera/fdconfigpreview.mot_gc13a2.bin
+vendor/lib64/camera/fdconfigpreview.mot_gc08a8.bin
 vendor/lib64/camera/fdconfigpreview.mot_gc32e1.bin
-vendor/lib64/camera/fdconfigpreview.mot_imx896.bin
+vendor/lib64/camera/fdconfigpreview.mot_imx882.bin
+vendor/lib64/camera/fdconfigpreview.mot_sc820cs.bin
 vendor/lib64/camera/fdconfigpreviewlite.bin
 vendor/lib64/camera/fdconfigvideo.bin
-vendor/lib64/camera/fdconfigvideo.mot_gc13a2.bin
+vendor/lib64/camera/fdconfigvideo.mot_gc08a8.bin
 vendor/lib64/camera/fdconfigvideo.mot_gc32e1.bin
-vendor/lib64/camera/fdconfigvideo.mot_imx896.bin
+vendor/lib64/camera/fdconfigvideo.mot_imx882.bin
+vendor/lib64/camera/fdconfigvideo.mot_sc820cs.bin
 vendor/lib64/camera/fdconfigvideolite.bin
 vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/com.qti.chi.override.so
@@ -58,7 +59,6 @@ vendor/lib64/com.qualcomm.qti.mcx.usecase.extension.so
 vendor/lib64/libBSTHDRDETECT.so
 vendor/lib64/libBSTMultiExpoGainHDR.so
 vendor/lib64/libBSTNodeUtils.so
-vendor/lib64/libBSTSWAD.so
 vendor/lib64/libDxHdcp.so
 vendor/lib64/libPlatformValidatorShared.so
 vendor/lib64/libaidenoiser.so
@@ -67,8 +67,9 @@ vendor/lib64/libanc_hdr.so
 vendor/lib64/libanc_hdr_adapter_front_main.so
 vendor/lib64/libanc_hdr_adapter_rear_main.so
 vendor/lib64/libanc_hdr_adapter_rear_uw.so
-vendor/lib64/libanc_motion_capture.so
-vendor/lib64/libanc_motion_capture_adapter_rear_main.so
+vendor/lib64/libarcsoft_chi_utils.so
+vendor/lib64/libarcsoft_distortion_correction.so
+vendor/lib64/libarcsoft_portrait_distortion_correction.so
 vendor/lib64/libarcsoft_qnnhtp.so
 vendor/lib64/libbitmlengine.so
 vendor/lib64/libbitmlenginev2.so
@@ -97,10 +98,10 @@ vendor/lib64/libmmcamera_pdpc.so
 vendor/lib64/libmot_afd.so
 vendor/lib64/libmot_engine_settings.so
 vendor/lib64/libmotcameramodulemonitor.so
-vendor/lib64/libmotoisdataqueue.so
 vendor/lib64/libopencv.so
 vendor/lib64/libopencv3a.so
 vendor/lib64/libopestriping.so
+vendor/lib64/libmpbase.so
 vendor/lib64/libportrait_repair_ppl3_ocl.so
 vendor/lib64/libqll.so
 vendor/lib64/libqll10.so
@@ -110,10 +111,8 @@ vendor/lib64/libsfeShiftExtrapolation.so
 vendor/lib64/libswregistrationalgo.so
 vendor/lib64/libtfestriping.so
 vendor/lib64/libubifocus.so
-vendor/lib64/libundistort_impl.so
 vendor/lib64/libvideoml.so
 vendor/lib64/libvidhance.so
-vendor/lib64/motorola.hardware.camera.imgtuner.aidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
 
 # Camera - CamX
@@ -135,10 +134,11 @@ vendor/lib64/libcamxswprocessalgo.so
 vendor/lib64/libcamxtintlessalgo.so
 
 # Camera - Components
+vendor/lib64/camera/components/com.arcsoft.node.dc_capture.so
+vendor/lib64/camera/components/com.arcsoft.node.dc_preview.so
 vendor/lib64/camera/components/com.bots.node.vendortagwrite.so
 vendor/lib64/camera/components/com.bst.node.hdrdetect.so
 vendor/lib64/camera/components/com.bst.node.yuvhdr.so
-vendor/lib64/camera/components/com.mot.node.dc_preview.so
 vendor/lib64/camera/components/com.qti.camx.chiiqutils.so
 vendor/lib64/camera/components/com.qti.eisv2.so
 vendor/lib64/camera/components/com.qti.eisv3.so
@@ -209,42 +209,35 @@ vendor/lib64/camera/components/com.vidhance.node.video.so
 vendor/lib64/camera/components/libdepthmapwrapper_secure.so
 
 # Camera - eeprom
-vendor/lib64/camera/com.mot.eeprom.mot_gt24p128f_imx896_eeprom.so
-vendor/lib64/camera/com.mot.eeprom.mot_gt24p64e_gc13a2_eeprom.so
+vendor/lib64/camera/com.mot.eeprom.mot_gt24p128g_imx882_eeprom.so
 vendor/lib64/camera/com.mot.eeprom.mot_gt24p64e_gc32e1_eeprom.so
+vendor/lib64/camera/com.mot.eeprom.mot_portov_gc08a8_otp.so
+vendor/lib64/camera/com.mot.eeprom.mot_portov_sc820cs_otp.so
 
 # Camera - etc
 vendor/etc/bstconfig/bstai_hdr
 vendor/etc/bstconfig/hdrcfg.cfg
-vendor/etc/camera/SwadAIMod.bin
-vendor/etc/camera/SwadCalib.bin
-vendor/etc/camera/SwadParamList.txt
+vendor/etc/camera/arcsoft_calibration_u_dc.bin
 vendor/etc/camera/mot_engine_config.bin
 vendor/etc/camera/vidhance.lic
 vendor/etc/camera/vidhance_calibration
 vendor/etc/jiigan/cache_front_main
 vendor/etc/jiigan/cache_rear_main
-vendor/etc/jiigan/cache_rear_main_mod
 vendor/etc/jiigan/cache_rear_uw
 vendor/etc/jiigan/dgain_mask_front_main.bin
 vendor/etc/jiigan/dgain_mask_rear_main.bin
-vendor/etc/jiigan/dgain_mask_rear_main_mod.bin
 vendor/etc/jiigan/dgain_mask_rear_uw.bin
 vendor/etc/jiigan/effect_param_front_main.json
 vendor/etc/jiigan/effect_param_rear_main.json
-vendor/etc/jiigan/effect_param_rear_main_mod.json
 vendor/etc/jiigan/effect_param_rear_uw.json
 vendor/etc/jiigan/hc_opr_lite_cache_front_main
 vendor/etc/jiigan/hc_opr_lite_cache_rear_main
-vendor/etc/jiigan/hc_opr_lite_cache_rear_main_mod
 vendor/etc/jiigan/hc_opr_lite_cache_rear_uw
 vendor/etc/jiigan/siq_ocl_cache_front_main
 vendor/etc/jiigan/siq_ocl_cache_rear_main
-vendor/etc/jiigan/siq_ocl_cache_rear_main_mod
 vendor/etc/jiigan/siq_ocl_cache_rear_uw
 vendor/etc/jiigan/superiq_model_front_main
 vendor/etc/jiigan/superiq_model_rear_main
-vendor/etc/jiigan/superiq_model_rear_main_mod
 vendor/etc/jiigan/superiq_model_rear_uw
 vendor/etc/tetras/super_resolution/sr_models.bin
 vendor/etc/tetras/portrait_repair_composite.model
@@ -304,18 +297,21 @@ vendor/firmware/CAMERA_ICP.mdt
 vendor/firmware/CAMERA_ICP_170.elf
 
 # Camera - sensor
-vendor/lib64/camera/com.qti.sensor.mot_gc13a2.so
+vendor/lib64/camera/com.qti.sensor.mot_gc08a8.so
 vendor/lib64/camera/com.qti.sensor.mot_gc32e1.so
-vendor/lib64/camera/com.qti.sensor.mot_imx896.so
-vendor/lib64/camera/com.qti.sensormodule.mot_mona_gc13a2_ofilm.bin
-vendor/lib64/camera/com.qti.sensormodule.mot_mona_gc32e1_qtech.bin
-vendor/lib64/camera/com.qti.sensormodule.mot_mona_imx896_mp_qtech.bin
+vendor/lib64/camera/com.qti.sensor.mot_imx882.so
+vendor/lib64/camera/com.qti.sensor.mot_sc820cs.so
+vendor/lib64/camera/com.qti.sensormodule.mot_portov_gc08a8_truly.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_portov_gc32e1_qtech.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_portov_imx882_sunny.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_portov_sc820cs_ddhl.bin
 
 # Camera tuned
 vendor/lib64/camera/com.qti.tuned.default.bin
-vendor/lib64/camera/com.qti.tuned.mot_mona_gc13a2.bin
-vendor/lib64/camera/com.qti.tuned.mot_mona_gc32e1.bin
-vendor/lib64/camera/com.qti.tuned.mot_mona_imx896.bin
+vendor/lib64/camera/com.qti.tuned.mot_portov_gc08a8.bin
+vendor/lib64/camera/com.qti.tuned.mot_portov_gc32e1.bin
+vendor/lib64/camera/com.qti.tuned.mot_portov_imx882.bin
+vendor/lib64/camera/com.qti.tuned.mot_portov_sc820cs.bin
 
 # CapSense
 vendor/bin/capsense_reset
@@ -323,39 +319,29 @@ vendor/bin/capsense_reset
 # Display configurations
 vendor/etc/displayconfig/display_id_4630946916234099603.xml
 
-# Charger Firmware
-vendor/firmware/sc9624.bin
-
 # Display calibration data
-vendor/etc/display/qdcm_calib_data_mipi_mot_vid_csot_1220p_dsc_667.json
-vendor/etc/display/qdcm_calib_data_mipi_mot_vid_tm_1220p_dsc_667.json
-vendor/etc/display/qdcm_calib_data_mipi_mot_video_dummy_qhd.json
+vendor/etc/display/qdcm_calib_data_mipi_mot_vid_boe_1080p_dsc_672_120hz.json
+vendor/etc/display/qdcm_calib_data_mipi_mot_vid_csot_1080p_dsc_672_120hz.json
+vendor/etc/display/qdcm_calib_data_mipi_mot_vid_txd_1080p_dsc_672_120hz.json
 
 # Fingerprint
-vendor/bin/hw/android.hardware.biometrics.fingerprint-service-rbs
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-goodixservice;DISABLE_DEPS
-vendor/etc/init/android.hardware.biometrics.fingerprint-service-rbs2.rc
-vendor/etc/init/fingerprint-goodix.rc
+vendor/bin/hw/android.hardware.biometrics.fingerprint-service.fpc;DISABLE_DEPS
+vendor/bin/hw/android.hardware.biometrics.fingerprint-service-jv
+vendor/etc/init/android.hardware.biometrics.fingerprint-service-jv.rc
+vendor/etc/init/fingerprint-fpc.rc
 vendor/etc/vintf/manifest/manifest_IMoto_AIDL_Fingerprint.xml
-vendor/lib64/hw/fingerprint.goodix.default.so
-vendor/lib64/com.motorola.hardware.biometric.fingerprint-V2-ndk.so
-vendor/lib64/com.motorola.hardware.biometric.fingerprint@1.1.so
-vendor/lib64/com.motorola.hardware.display.panel-V1-ndk.so
+vendor/lib64/hw/anc.hal.so
+vendor/lib64/hw/fingerprint.fpc.parrot.so
+vendor/lib64/hw/jiiov.fingerprint.jv0103.default.so
+vendor/lib64/com.motorola.hardware.biometric.fingerprint-V1-ndk.so
+vendor/lib64/com.motorola.hardware.biometric.fingerprint-V3-ndk.so
 vendor/lib64/com.motorola.hardware.display.panel-V2-ndk.so
-vendor/lib64/libRbsFlow.so
-vendor/lib64/libets_teeclient_v3.so
-vendor/lib64/libgf_hal.so
-vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
 
 # HotwordEnrollment
 product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk
 product/priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND.apk
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
-
-# Input
-vendor/usr/keylayout/fts_ts.kl
-vendor/usr/keylayout/goodix_ts.kl
 
 # MotCamera5
 product/etc/permissions/com.motorola.camera5.xml
@@ -375,7 +361,7 @@ system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk
 
 # Moto Permissions
 product/etc/permissions/com.motorola.camera5.lens.xml:vendor/etc/permissions/com.motorola.camera5.lens.xml
-product/etc/permissions/com.motorola.camera5.mona.xml:vendor/etc/permissions/com.motorola.camera5.mona.xml
+product/etc/permissions/com.motorola.camera5.portov.xml:vendor/etc/permissions/com.motorola.camera5.portov.xml
 product/etc/permissions/com.motorola.camera5.xml:vendor/etc/permissions/com.motorola.camera5.xml
 product/etc/permissions/com.motorola.moto-uirefresh.xml
 
@@ -390,27 +376,15 @@ vendor/firmware/st54l_fw.bin
 vendor/firmware/st54l_fw_felica.bin
 
 # NFC Configs
-vendor/etc/libnfc-hal-st-dvt1.conf
+vendor/etc/libnfc-hal-st-prc.conf
 vendor/etc/libnfc-hal-st.conf
 vendor/etc/libnfc-nci-st-felica.conf
 vendor/etc/libnfc-nci-st.conf
 
-# Sensors
-vendor/lib64/panel_als_comp_filter_mona.so
-
-# Sensorext
-vendor/bin/hw/motorola.hardware.sensorext-service
-vendor/etc/init/motorola.hardware.sensorext.service.rc
-vendor/etc/vintf/manifest/motorola.hardware.sensorext.service.xml
-vendor/lib64/libflatbuffers-cpp_vendor.so
-vendor/lib64/libruy_vendor.so
-vendor/lib64/libtextclassifier_hash_vendor.so
-vendor/lib64/libtflite_vendor.so
-
 # Sensors configs
-vendor/etc/sensors/config/bmp5_0.json
-vendor/etc/sensors/config/icm4x6xx_0.json
-vendor/etc/sensors/config/icp201xx_0.json
+vendor/etc/sensors/config/hx322x.json
+vendor/etc/sensors/config/icm4x6xa_0.json
+vendor/etc/sensors/config/lsm6dsv_0.json
 vendor/etc/sensors/config/mmc56x3x_0.json
 vendor/etc/sensors/config/mot_camgest.json
 vendor/etc/sensors/config/mot_chopchop.json
@@ -423,13 +397,6 @@ vendor/etc/sensors/config/sns_amd.json
 vendor/etc/sensors/config/sns_amd_sw_enabled.json
 vendor/etc/sensors/config/sns_aont.json
 vendor/etc/sensors/config/sns_bring_to_ear.json
-vendor/etc/sensors/config/sns_ccd_v1_0_amd.json
-vendor/etc/sensors/config/sns_ccd_v1_0_ttw.json
-vendor/etc/sensors/config/sns_ccd_v2_0_walk.json
-vendor/etc/sensors/config/sns_ccd_v3_0_walk.json
-vendor/etc/sensors/config/sns_ccd_v3_1_walk.json
-vendor/etc/sensors/config/sns_ccd_v4_0_sensors.json
-vendor/etc/sensors/config/sns_ccd_v4_0_te_cd_regs.json
 vendor/etc/sensors/config/sns_cm.json
 vendor/etc/sensors/config/sns_dae.json
 vendor/etc/sensors/config/sns_device_orient.json
@@ -452,39 +419,37 @@ vendor/etc/sensors/config/sns_tilt.json
 vendor/etc/sensors/config/sns_tilt_sw_disabled.json
 vendor/etc/sensors/config/sns_tilt_sw_enabled.json
 vendor/etc/sensors/config/sns_tilt_to_wake.json
-vendor/etc/sensors/config/stk3b6x_0.json
-vendor/etc/sensors/config/stk3b6x_0_dvt2.json
-vendor/etc/sensors/config/stk3bfx_0.json
-vendor/etc/sensors/config/stk3bfx_0_dvt1.json
+vendor/etc/sensors/config/stk3a5x_0.json
+vendor/etc/sensors/config/stk6a2x_0.json
+vendor/etc/sensors/config/stk6a7x_0.json
 vendor/etc/sensors/config/waipio_default_sensors.json
 vendor/etc/sensors/config/waipio_dynamic_sensors.json
 vendor/etc/sensors/config/waipio_irq.json
 vendor/etc/sensors/config/waipio_power_0.json
-vendor/etc/sensors/als_comp_config.xml
-vendor/etc/sensors/als_comp_tf_csot_a.config
-vendor/etc/sensors/als_comp_tf_csot_b.config
-vendor/etc/sensors/als_comp_tf_csot_b_dc_on.config
-vendor/etc/sensors/als_comp_tf_csot_c8.config
-vendor/etc/sensors/als_comp_tf_csot_c8_dc_on.config
+vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sns_reg_config
 
+# Speaker firmware
+vendor/firmware/frsm-spk1.bin
+vendor/firmware/frsm-spk2.bin
+
 # Thermal configs
-vendor/etc/thermal-engine-mona-auto.conf
-vendor/etc/thermal-engine-mona-camera.conf
-vendor/etc/thermal-engine-mona-fastc.conf
-vendor/etc/thermal-engine-mona-game-perf.conf
-vendor/etc/thermal-engine-mona-teams.conf
-vendor/etc/thermal-engine-mona.conf
+vendor/etc/thermal-engine-portov-auto.conf
+vendor/etc/thermal-engine-portov-camera.conf
+vendor/etc/thermal-engine-portov-game-perf.conf
+vendor/etc/thermal-engine-portov-ngb.conf
+vendor/etc/thermal-engine-portov-perf.conf
+vendor/etc/thermal-engine-portov-skynet.conf
+vendor/etc/thermal-engine-portov-tiktok.conf
+vendor/etc/thermal-engine-portov.conf
 vendor/etc/thermal-engine.conf
 
 # Touch firmware
-vendor/firmware/csot_goodix_cfg_group.bin
-vendor/firmware/goodix-csot-gt9916P-25012409-67933DE8-mona.bin
-vendor/firmware/goodix-tm-gt9916P-2501240A-6793047A-mona.bin
-vendor/firmware/tm_goodix_cfg_group.bin
+vendor/firmware/ILITEK_FW_TXD
+vendor/firmware/boe_chipone_firmware.bin
+vendor/firmware/csot_chipone_firmware.bin
 
 # Touch firmware (recovery)
-vendor/firmware/csot_goodix_cfg_group.bin:recovery/root/vendor/firmware/csot_goodix_cfg_group.bin
-vendor/firmware/goodix-csot-gt9916P-25012409-67933DE8-mona.bin:recovery/root/vendor/firmware/goodix-csot-gt9916P-25012409-67933DE8-mona.bin
-vendor/firmware/goodix-tm-gt9916P-2501240A-6793047A-mona.bin:recovery/root/vendor/firmware/goodix-tm-gt9916P-2501240A-6793047A-mona.bin
-vendor/firmware/tm_goodix_cfg_group.bin:recovery/root/vendor/firmware/tm_goodix_cfg_group.bin
+vendor/firmware/ILITEK_FW_TXD:recovery/root/vendor/firmware/ILITEK_FW_TXD
+vendor/firmware/boe_chipone_firmware.bin:recovery/root/vendor/firmware/boe_chipone_firmware.bin
+vendor/firmware/csot_chipone_firmware.bin:recovery/root/vendor/firmware/csot_chipone_firmware.bin

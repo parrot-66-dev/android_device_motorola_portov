@@ -8,20 +8,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from mona device
-$(call inherit-product, device/motorola/mona/device.mk)
+$(call inherit-product, device/motorola/portov/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_mona
-PRODUCT_DEVICE := mona
+PRODUCT_NAME := lineage_portov
+PRODUCT_DEVICE := portov
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
-PRODUCT_MODEL := motorola moto g stylus - 2025
+PRODUCT_MODEL := motorola moto g 67 power 5G
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="mona_g-user 16 W1VAS36.62-22-16-16 5d4b3-34456 release-keys" \
-    BuildFingerprint="motorola/mona/mona:15/VVA3S5V-W1-ST15.1/5d4b3:user/release-keys" \
-    DeviceProduct="mona_g"
+    BuildDesc="portov_g-user 16 W1VT36H.22-20-3-2 3b779-1e40b release-keys" \
+    BuildFingerprint="motorola/portov_g/portov:16/W1VT36H.22-20-3-2/3b779-1e40b:user/release-keys" \
+    DeviceProduct="portov_g"
