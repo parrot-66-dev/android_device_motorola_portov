@@ -7,7 +7,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from mona device
+# Inherit from portov device
 $(call inherit-product, device/motorola/portov/device.mk)
 
 # Inherit some common Lineage stuff.
