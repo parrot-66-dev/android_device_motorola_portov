@@ -1,6 +1,6 @@
 
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from moto g67 power 5G (16 W1VT36H.22-20-3-2).
+## are from moto g67 power 5G (16 W1VTS36H.22-20-3-2-3).
 ## variant: RETID
 
 # ACDB Data

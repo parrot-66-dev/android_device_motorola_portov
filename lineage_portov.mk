@@ -22,6 +22,6 @@ PRODUCT_MODEL := motorola moto g 67 power 5G
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="portov_g-user 16 W1VT36H.22-20-3-2 3b779-1e40b release-keys" \
-    BuildFingerprint="motorola/portov_g/portov:16/W1VT36H.22-20-3-2/3b779-1e40b:user/release-keys" \
+    BuildDesc="portov_g-user 16 W1VTS36H.22-20-3-2-3 e5c56a-0049ea release-keys" \
+    BuildFingerprint="motorola/portov_g/portov:16/W1VTS36H.22-20-3-2-3/e5c56a-0049ea:user/release-keys" \
     DeviceProduct="portov_g"

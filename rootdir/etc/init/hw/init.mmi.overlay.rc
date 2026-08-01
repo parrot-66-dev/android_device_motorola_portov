@@ -1,12 +1,22 @@
 import /vendor/etc/init/hw/init.vendor.st21nfc.rc
 
+on early-init
+   exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -r -d /vendor/lib/modules zram
+
+on late-init
+   exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules moto_mm moto_swap mmi_lpm_dbg
+
 on fs
-  insmod /vendor/lib/modules/leds_aw99703.ko
+	insmod /vendor/lib/modules/leds_aw99703.ko
 	insmod /vendor/lib/modules/ktd3136_bl.ko
 	insmod /vendor/lib/modules/msm_drm.ko
+	insmod /vendor/lib/modules/mmi_annotate.ko
+	insmod /vendor/lib/modules/mmi_info.ko
+	insmod /vendor/lib/modules/mmi_relay.ko
 	insmod /vendor/lib/modules/sensors_class.ko
 	insmod /vendor/lib/modules/qti_glink_charger.ko
 	insmod /vendor/lib/modules/qpnp_adaptive_charge.ko
+	insmod /vendor/lib/modules/moto_mmap_fault.ko
 	insmod /vendor/lib/modules/chipone_tddi_v3_mmi.ko
 	insmod /vendor/lib/modules/ilitek_v4_mmi.ko
 	insmod /vendor/lib/modules//awinic_sar.ko
@@ -19,26 +29,74 @@ on fs
 on post-fs && property:ro.boot.secure_hardware=0
         write /proc/con_dfpar/con_dfpar_enable 1
 
+on post-fs-data
+    # Add for modem rfs logs
+    rm /data/vendor/radio/read_modem_efs
+    write /data/vendor/radio/read_modem_efs 0
+    chmod 0666 /data/vendor/radio/read_modem_efs
+
+
 on early-boot
+    # factory i2c
+    chmod 0660 /dev/i2c-0
+    chmod 0660 /dev/i2c-1
+    chmod 0660 /dev/i2c-2
+    chmod 0660 /dev/i2c-3
+    chmod 0660 /dev/i2c-4
+    chown system system /dev/i2c-0
+    chown system system /dev/i2c-1
+    chown system system /dev/i2c-2
+    chown system system /dev/i2c-3
+    chown system system /dev/i2c-4
+
     # Permission for Health Storage HAL
     chown system system /sys/devices/platform/soc/1d84000.ufshc/ufshid/trigger
     chown system system /sys/devices/platform/soc/1d84000.ufshc/ufshid/color
     chown system system /sys/devices/platform/soc/1d84000.ufshc/attributes_hid/manual_gc_status
-    
-    # for fmradio elna ctrl module
-    chown system system /sys/devices/platform/soc/soc:fm_wcn39x0/elna_en
+
+    chown system system /dev/jiiov_fp
+    chmod 0664 /dev/jiiov_fp
+    mkdir /data/vendor/jiiov
+    chmod 0770 /data/vendor/jiiov
+    chown system system /data/vendor/jiiov
+    mkdir /data/vendor/jiiov/factory_test
+    chmod 0770 /data/vendor/jiiov/factory_test
+    chown system system /data/vendor/jiiov/factory_test
+    mkdir /mnt/vendor/persist/jiiov 0770 system system
 
     # change permission of backlight brightness for tcmd daemon
     chmod 664 /sys/class/backlight/panel1-backlight/brightness
-    
+    # for ufs HID
+    chown system system /sys/devices/platform/soc/1d84000.ufshc/ufshid/trigger
+
+    # for fmradio elna ctrl module
+    chown system system /sys/devices/platform/soc/soc:fm_wcn39x0/elna_en
+
+    # for ghost log capture
+    chmod 0444 /dev/tp_tools
+
     chmod 0666 /proc/cts_tool
+
+    chown system system /sys/devices/platform/soc/1d84000.ufshc/manual_gc
 
     # Add for after-sales ois gyro cal
     mkdir /mnt/vendor/persist/camera/gyro_compat 0770 vendor_tcmd camera
+    # Add for OIS hall test result
+    mkdir /mnt/vendor/persist/camera/ois_hall 0770 vendor_tcmd camera
+
+    on property:ro.bootmode=mot-factory
+    # change camera sois save hall data
+    mkdir /data/vendor/camera/ois_hall_data 0777 camera vendor_tcmd
 
 on boot
+    # allow TCMD to access cci for OIS test
+    chmod 0660 /dev/cci_intf
+    chown system camera /dev/cci_intf
+    chmod 0664 /mnt/vendor/persist/factory/audio/aw_cali.bin
+
     # change permission of brightness
     chown system system /sys/class/backlight/aw99703-bl/brightness
+    chmod 0666 /sys/class/backlight/aw99703-bl/brightness
     chown system system /sys/class/backlight/ktd3136-bl/brightness
     chmod 0666 /sys/class/backlight/ktd3136-bl/brightness
 
@@ -60,7 +118,6 @@ on boot
     chmod 0660 /sys/class/touchscreen/primary/sample
     chown system system /sys/class/touchscreen/primary/log_trigger
     chmod 0660 /sys/class/touchscreen/primary/log_trigger
-
     chown system system /sys/class/touchscreen/primary/stowed
     chmod 0660 /sys/class/touchscreen/primary/stowed
 
@@ -78,6 +135,10 @@ on boot
     chmod 0660 /sys/class/capsense/mode
     chmod 0660 /sys/class/capsense/enable
 
+    #change vibrator test node file access permission
+    chmod 0660 /sys/class/qcom-haptics/enable_play
+    chown vendor_tcmd system /sys/class/qcom-haptics/enable_play
+
 service vendor.capsense_reset /vendor/bin/capsense_reset
    class core
    user system
@@ -89,15 +150,55 @@ service vendor.mmi-cap-sh /vendor/bin/init.mmi.cap.sh
     user root
     oneshot
 
+service vendor.mot_vsync_psd /vendor/bin/motpsd
+    class late_start
+    user root
+
 on property:sys.boot_completed=1
     start vendor.capsense_reset
+    #change adsp pmic test command file access permission
+    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/tcmd
+    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl
+    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_usb_suspend
+    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/addr
+    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/data
+    chown vendor_tcmd system /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_wls_en
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/tcmd
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_usb_suspend
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/addr
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/data
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_wls_en
+
+    #change flip battery charging test command file access permission
+    chown vendor_tcmd system /sys/class/power_supply/charger/device/chg_en
+    chown vendor_tcmd system /sys/class/power_supply/charger/device/charger_suspend
+    chown vendor_tcmd system /sys/class/power_supply/charger/device/high_load_en
+    chown vendor_tcmd system /sys/class/power_supply/charger/device/low_load_en
+    chown vendor_tcmd system /sys/class/power_supply/charger/input_current_limit
+    chown vendor_tcmd system /sys/class/power_supply/charger/constant_charge_current
 
     # copy gps license file to /mnt/vendor/persist/data/pfm/licenses
     copy /vendor/etc/motorola/qcom_gps_license.pfm /mnt/vendor/persist/data/pfm/licenses/qcom_gps_license.pfm
     chmod 0644 /mnt/vendor/persist/data/pfm/licenses/qcom_gps_license.pfm
 
+   # Set adaptive charging perms for HAL
+    chown system system /sys/module/qpnp_adaptive_charge/parameters/upper_limit
+    chown system system /sys/module/qpnp_adaptive_charge/parameters/lower_limit
+
     write /proc/sys/vm/dirty_background_bytes 26214400
     write /proc/sys/vm/dirty_bytes 104857600
+
+service vendor.modem-rfs-sh /vendor/bin/init.mmi.modem-rfs.sh loop_forever
+    class late_start
+    user root
+    group log system radio
+    oneshot
+
+on property:sys.boot_completed=1 && property:ro.vendor.build.motfactory=1
+    # Change force_charging_enable access mode and permission for tcmd
+    chmod 0664 /sys/class/power_supply/battery/device/force_charging_enable
+    chown vendor_tcmd system /sys/class/power_supply/battery/device/force_charging_enable
 
 #change for Geneva5G NA (SM6450) because the node changed
 on property:vendor.wifi.tethering=false
@@ -112,6 +213,21 @@ on property:vendor.wifi.station=true
 on property:vendor.wifi.station=false
     write /sys/module/qca_cld3_adrastea/parameters/sar_sta disabled
 
+service vendor.netconfig /vendor/bin/vendor_netconfig
+    class main
+    user root
+    group root system
+    oneshot
+    disabled
+
+on boot && property:ro.bootmode=mot-factory
+    start vendor.netconfig
+
+on property:ro.bootmode=mot-factory
+    write /sys/class/leds/charging/brightness 100
+    chown vendor_tcmd system /sys/module/mmi_charger/parameters/factory_kill_disable
+    chmod 0660 /sys/module/mmi_charger/parameters/factory_kill_disable
+
 on init && property:ro.boot.cid=0x0000
     write /sys/module/sgm4154x_charger_lite/parameters/paired_vbat_panic_enabled 1
 
@@ -121,11 +237,20 @@ on init && property:ro.boot.chg_panic_enabled=false
 on init && property:ro.boot.chg_panic_enabled=true
     write /sys/module/sgm4154x_charger_lite/parameters/paired_vbat_panic_enabled 1
 
+# Enable debugfs for userdebug build
+on early-init && property:ro.build.type=userdebug
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+
 on property:vendor.bluetooth.sar_state=connect
     write /data/vendor/radio/bluetooth_sar connect
 
 on property:vendor.bluetooth.sar_state=disconnect
     write /data/vendor/radio/bluetooth_sar disconnect
+
+# Disable the host silent recovery
+on property:sys.boot_completed=1 && property:ro.build.type=userdebug
+    write /sys/class/remoteproc/remoteproc3/recovery disabled
 
 on property:sys.usb.accessory_current_limit=1
     write /sys/devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/force_pmic_icl 1000

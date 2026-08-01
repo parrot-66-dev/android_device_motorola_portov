@@ -23,7 +23,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/properties/vendor.prop
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 
 # Security
-BOOT_SECURITY_PATCH := 2026-05-01
+BOOT_SECURITY_PATCH := 2026-07-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Vintf
@@ -33,8 +33,8 @@ ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_dn.xml
 ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_dne.xml
 
 # Verified Boot
-BOARD_AVB_ROLLBACK_INDEX := 9
-BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 9
+BOARD_AVB_ROLLBACK_INDEX := 11
+BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 11
 
 # inherit from the proprietary version
 include vendor/motorola/portov/BoardConfigVendor.mk
