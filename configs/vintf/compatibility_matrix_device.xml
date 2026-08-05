@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<compatibility-matrix version="9.0" type="framework">
+   <hal format="aidl" optional="true">
+        <name>com.motorola.hardware.ifaa</name>
+        <interface>
+            <name>IIFAADevice</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>

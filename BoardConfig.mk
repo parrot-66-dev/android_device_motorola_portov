@@ -28,9 +28,11 @@ VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Vintf
 ODM_MANIFEST_SKUS += d dn dne
-ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_d.xml
+ODM_MANIFEST_D_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_d.xml
 ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_dn.xml
 ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_dne.xml
+
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix_device.xml
 
 # Verified Boot
 BOARD_AVB_ROLLBACK_INDEX := 11
