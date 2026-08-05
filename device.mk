@@ -50,7 +50,8 @@ PRODUCT_PACKAGES += \
     FrameworksResDevice \
     LineageSdkResDevice \
     LineageSystemUIResDevice \
-    SystemUIResDevice
+    SystemUIResDevice \
+    SettingsResDevice
     
 # Properties
 PRODUCT_PACKAGES += \
