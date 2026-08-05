@@ -14,7 +14,7 @@ It was globally released in November 2025.
 Basic   | Spec Sheet
 -------:|:-------------------------
 Platform | Snapdragon® 7s Gen 2 (SM7435-AB)
-RAM & Storage | 8GB/128GB, 8GB/256GB, 12GB/256GB (LPDDR4X RAM)
+RAM & Storage | 8GB/128GB, 8GB/256GB, 12GB/256GB 12GB/512GB (LPDDR4X RAM)
 Shipped Android Version | 15
 Battery | Non-removable, 7000 mAh
 Display | 6.7″, 120Hz, 1080x2400 (391 ppi)
