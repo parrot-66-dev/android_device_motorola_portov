@@ -324,6 +324,12 @@ vendor/etc/display/qdcm_calib_data_mipi_mot_vid_boe_1080p_dsc_672_120hz.json
 vendor/etc/display/qdcm_calib_data_mipi_mot_vid_csot_1080p_dsc_672_120hz.json
 vendor/etc/display/qdcm_calib_data_mipi_mot_vid_txd_1080p_dsc_672_120hz.json
 
+# Face unlock
+vendor/bin/hw/android.hardware.biometrics.face-service.face-isv
+vendor/etc/init/android.hardware.biometrics.face-service.face.rc
+vendor/etc/vintf/manifest/face-default_4.xml
+vendor/lib64/libFaceUnlock.so
+
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint-service.fpc;DISABLE_DEPS
 vendor/bin/hw/android.hardware.biometrics.fingerprint-service-jv

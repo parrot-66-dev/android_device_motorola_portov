@@ -15,7 +15,7 @@ PRODUCT_COPY_FILES += \
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
-    
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     libshim_fp
