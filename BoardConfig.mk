@@ -11,6 +11,9 @@ include device/motorola/sm7435-common/BoardConfigCommon.mk
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := portov
 
+# Kernel
+TARGET_KERNEL_CONFIG += vendor/ext_config/moto-parrot-portov.config
+
 # Partitions
 BOARD_MOT_DP_GROUP_SIZE := 7511998464 # (BOARD_SUPER_PARTITION_SIZE - 4MB)
 BOARD_SUPER_PARTITION_SIZE := 7516192768
