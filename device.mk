@@ -74,8 +74,8 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 # Wi-Fi
 TARGET_WIFI_VARIANTS := adrastea
 
-# Inherit from motorola sm7435-common
-$(call inherit-product, device/motorola/sm7435-common/common.mk)
+# Inherit from motorola sm6450-common
+$(call inherit-product, device/motorola/sm6450-common/common.mk)
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/motorola/portov/portov-vendor.mk)

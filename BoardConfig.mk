@@ -5,8 +5,8 @@
 
 DEVICE_PATH := device/motorola/portov
 
-# Inherit from motorola sm7435-common
-include device/motorola/sm7435-common/BoardConfigCommon.mk
+# Inherit from motorola sm6450-common
+include device/motorola/sm6450-common/BoardConfigCommon.mk
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := portov
