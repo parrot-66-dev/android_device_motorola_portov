@@ -10,10 +10,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from portov device
 $(call inherit-product, device/motorola/portov/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AOSPA stuff.
+$(call inherit-product, vendor/aospa/target/product/aospa-target.mk)
 
-PRODUCT_NAME := lineage_portov
+PRODUCT_NAME := aospa_portov
 PRODUCT_DEVICE := portov
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola

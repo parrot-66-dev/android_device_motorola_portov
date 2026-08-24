@@ -29,12 +29,18 @@ PRODUCT_PACKAGES += \
     
 PRODUCT_PACKAGES +=\
     libshim_fp
+    
+# Firmware
+$(call inherit-product-if-exists, vendor/motorola/firmware/portov/config.mk)
 
 # FM
 TARGET_HAS_FM := true
 
 PRODUCT_PACKAGES += \
     FM2
+    
+# Kernel
+KERNEL_PREBUILT_DIR := $(LOCAL_PATH)-kernel
 
 # Init
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/hw/*.rc),\
