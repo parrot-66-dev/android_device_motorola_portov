@@ -4,12 +4,7 @@
 ## variant: RETID
 
 # ACDB Data
-vendor/etc/acdbdata/nn_ns_models/fai__2.6.3_0.0__3.0.0_0.0__eai_1.10_enpu1.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__4.7.0_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_1.43_enpu2.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__4.8.1.11_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_1.43_enpuv2.pmd
 vendor/etc/acdbdata/nn_ns_models/fai__4.8.14_0.0__3.0.0_0.0__3.1.1_0.0__3.2.0_0.1__eai_1.43_enpu2.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__4.8.14_0.0__3.0.0_0.0__3.1.2_0.0__3.2.0_0.1__eai_1.43_enpu2.pmd
-vendor/etc/acdbdata/nn_ns_models/fai__4.8.4_0.0__3.0.0_0.0__eai_1.43_enpu2.pmd
 vendor/etc/acdbdata/nn_vad_models/fai__3.0.0_0.0__eai_1.36_enpu2.pmd
 vendor/etc/acdbdata/parrot_qrd/QRD_acdb_cal.acdb
 vendor/etc/acdbdata/parrot_qrd/QRD_workspaceFileXml.qwsp
@@ -98,10 +93,10 @@ vendor/lib64/libmmcamera_pdpc.so
 vendor/lib64/libmot_afd.so
 vendor/lib64/libmot_engine_settings.so
 vendor/lib64/libmotcameramodulemonitor.so
+vendor/lib64/libmpbase.so
 vendor/lib64/libopencv.so
 vendor/lib64/libopencv3a.so
 vendor/lib64/libopestriping.so
-vendor/lib64/libmpbase.so
 vendor/lib64/libportrait_repair_ppl3_ocl.so
 vendor/lib64/libqll.so
 vendor/lib64/libqll10.so
@@ -331,8 +326,8 @@ vendor/etc/vintf/manifest/face-default_4.xml
 vendor/lib64/libFaceUnlock.so
 
 # Fingerprint
-vendor/bin/hw/android.hardware.biometrics.fingerprint-service.fpc;DISABLE_DEPS
 vendor/bin/hw/android.hardware.biometrics.fingerprint-service-jv
+vendor/bin/hw/android.hardware.biometrics.fingerprint-service.fpc;DISABLE_DEPS
 vendor/etc/init/android.hardware.biometrics.fingerprint-service-jv.rc
 vendor/etc/init/fingerprint-fpc.rc
 vendor/etc/vintf/manifest/manifest_IMoto_AIDL_Fingerprint.xml
