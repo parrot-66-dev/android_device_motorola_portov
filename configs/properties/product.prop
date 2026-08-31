@@ -5,7 +5,7 @@ ro.opa.device_model_id=motorola-portov
 ro.mot.build.customerid=global
 
 # Radio
-ro.vendor.radio.imei.sv=3
+ro.vendor.radio.imei.sv?=3
 
 # SKU specific properties
 import /product/etc/hardware.sku.${ro.boot.hardware.sku}.prop
