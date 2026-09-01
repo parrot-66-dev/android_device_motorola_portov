@@ -337,9 +337,6 @@ product/etc/permissions/com.motorola.camera5.lens.xml:vendor/etc/permissions/com
 product/etc/permissions/com.motorola.camera5.portov.xml:vendor/etc/permissions/com.motorola.camera5.portov.xml
 product/etc/permissions/com.motorola.camera5.xml:vendor/etc/permissions/com.motorola.camera5.xml
 
-# NFC
-vendor/lib64/nfc_nci.st21nfc.st.so
-
 # NFC Firmware
 vendor/firmware/st21nfc_fw.bin
 vendor/firmware/st21nfc_fw7.bin
@@ -348,10 +345,14 @@ vendor/firmware/st54l_fw.bin
 vendor/firmware/st54l_fw_felica.bin
 
 # NFC Configs
-vendor/etc/libnfc-hal-st-prc.conf
 vendor/etc/libnfc-hal-st.conf
 vendor/etc/libnfc-nci-st-felica.conf
 vendor/etc/libnfc-nci-st.conf
+vendor/etc/st54l_conf_ds.txt
+vendor/etc/st54l_conf_ss.txt
+
+# Secure Element
+vendor/etc/libse-gto-hal.conf
 
 # Sensors configs
 vendor/etc/sensors/config/hx322x.json
