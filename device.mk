@@ -44,6 +44,9 @@ PRODUCT_PACKAGES += \
     FrameworksResDevice \
     LineageSdkResDevice \
     LineageSystemUIResDevice \
+    RegulatoryOverlayXT2533-3 \
+    RegulatoryOverlayXT2533-4 \
+    RegulatoryOverlayXT2533-5 \
     SystemUIResDevice \
     SettingsResDevice
     
