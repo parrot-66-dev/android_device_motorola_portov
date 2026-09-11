@@ -18,17 +18,10 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    libshim_fp
-
-# Fingerprint
-PRODUCT_PACKAGES += \
     android.hardware.biometrics.face-V4-ndk.vendor \
     android.hardware.biometrics.fingerprint-V3-ndk.vendor \
     android.hardware.biometrics.common.util.vendor \
     android.hardware.biometrics.common.thread.vendor
-    
-PRODUCT_PACKAGES +=\
-    libshim_fp
 
 # FM
 TARGET_HAS_FM := true
@@ -41,9 +34,6 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/hw/*.rc),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/$(notdir $f)))
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/bin/$(notdir $f)))
-        
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/root/init.recovery.touch.rc:recovery/root/init.recovery.touch.rc
     
 # Keylayout
 PRODUCT_COPY_FILES += \
