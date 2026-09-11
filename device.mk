@@ -44,6 +44,10 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
         
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.touch.rc:recovery/root/init.recovery.touch.rc
+    
+# Keylayout
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_OUT_VENDOR)/usr/keylayout
 
 # Overlay
 PRODUCT_PACKAGES += \
