@@ -1,3 +1,0 @@
-on boot
-   insmod /lib/modules/chipone_tddi_v3_mmi.ko
-	 insmod /lib/modules/ilitek_v4_mmi.ko
